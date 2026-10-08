@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "co-decide",
+  "version": "0.5.0",
+  "description": "从简短目标发现关键取舍，用小样逐题共同决定，持续吸收反馈、检查组合并交付完整成果。",
+  "author": { "name": "Co-Decide contributors" },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Co-Decide 共创",
+        "shortDescription": "持续反馈、组合检查、完整交付",
+        "longDescription": "一个持续合作的 Skill：从简短目标自行发现关键取舍，用具体小样逐题共同决定；用户提示与混合选择更新有效决定，agent 检查组合依赖与替换影响并验证完整成果。自然语言可调低、中、高发散程度，需要外部依据时主动搜索；不修改模型推理参数。一次一题，提问后暂停，超时追加等待 90 分钟，收到明确反馈才继续。",
+        "developerName": "Co-Decide contributors",
+        "category": "Productivity",
+        "capabilities": [],
+        "composerIcon": "./assets/icon.svg",
+        "logo": "./assets/icon.svg"
+      }
+    }
+  }
+}

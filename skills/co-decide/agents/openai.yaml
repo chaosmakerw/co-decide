@@ -1,0 +1,4 @@
+interface:
+  display_name: "Co-Decide 共创"
+  short_description: "自主发现关键取舍，持续吸收反馈、检查组合并交付完整成果"
+  default_prompt: "用 $co-decide 与我合作完成任务，用具体小样共同决定，持续根据我的反馈整合并验证完整成果，收到明确回复才继续。"

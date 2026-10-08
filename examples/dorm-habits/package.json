@@ -1,0 +1,14 @@
+{
+  "name": "dorm-habit-local-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "四人宿舍习惯打卡的本地单浏览器演示",
+  "scripts": {
+    "start": "node server.cjs",
+    "check": "node --check app.js && node --check server.cjs && node --check verify.cjs",
+    "test": "node verify.cjs"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.64.0"
+  }
+}

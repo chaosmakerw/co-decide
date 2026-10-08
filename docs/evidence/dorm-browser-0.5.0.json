@@ -1,0 +1,88 @@
+{
+  "scope": "真实本地 Edge 浏览器中的单浏览器身份模拟；不是真实四人共享",
+  "tool": "playwright-core + Microsoft Edge + Node.js assert",
+  "scenarios": [
+    {
+      "name": "初次加载：四个不同示例习惯，完成记录为空，演示边界可见",
+      "result": "passed",
+      "durationMs": 19
+    },
+    {
+      "name": "新增个人习惯：去除空白；拒绝空名称及同人重复；失败不新增",
+      "result": "passed",
+      "durationMs": 322
+    },
+    {
+      "name": "打卡与撤销：个人、共同进度和本周统计同步；撤销刷新后保留",
+      "result": "passed",
+      "durationMs": 92
+    },
+    {
+      "name": "刷新保存：习惯、打卡记录和选中演示身份均恢复",
+      "result": "passed",
+      "durationMs": 123
+    },
+    {
+      "name": "四人身份模拟：各自习惯独立，共同进度汇总不同目标；无排名惩罚",
+      "result": "passed",
+      "durationMs": 166
+    },
+    {
+      "name": "手机宽度实际渲染：可切身份和打卡，无页面横向溢出",
+      "result": "passed",
+      "durationMs": 104
+    },
+    {
+      "name": "存储范围：另一个隔离浏览器会话不会收到当前演示数据",
+      "result": "passed",
+      "durationMs": 222
+    },
+    {
+      "name": "本周统计：合成历史夹具验证新增前和未来日期不计入",
+      "result": "passed",
+      "durationMs": 122
+    },
+    {
+      "name": "名称作为文字显示：包含 HTML 字符不会创建元素或执行脚本",
+      "result": "passed",
+      "durationMs": 50
+    },
+    {
+      "name": "零习惯边界：展示起步提示；新增并打卡后可达到100%",
+      "result": "passed",
+      "durationMs": 118
+    },
+    {
+      "name": "损坏记录边界：显示错误并停写，原始存储没有覆盖",
+      "result": "passed",
+      "durationMs": 104
+    },
+    {
+      "name": "保存失败边界：操作不生效，明确提示；真实浏览器无未处理脚本异常",
+      "result": "passed",
+      "durationMs": 100
+    }
+  ],
+  "syntheticFixtures": [
+    "本周日期统计数据",
+    "空习惯集合",
+    "损坏的 localStorage",
+    "模拟存储写入失败"
+  ],
+  "browserVersion": "154.0.4258.62",
+  "playwrightVersion": "1.64.0",
+  "startedAtUTC": "2026-10-08T09:08:36.242Z",
+  "completedAtUTC": "2026-10-08T09:08:38.520Z",
+  "testsRun": 12,
+  "passed": 12,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "result": "VERIFICATION SUCCESS",
+  "serverClosed": true,
+  "browserClosed": true,
+  "screenshots": [
+    "../../examples/dorm-habits/artifacts/desktop.png",
+    "../../examples/dorm-habits/artifacts/mobile.png"
+  ]
+}

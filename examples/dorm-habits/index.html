@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>同一屋檐 · 四人习惯打卡</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="page-header">
+      <div><p class="eyebrow">四个人，各自坚持，一起看见</p><h1>同一屋檐</h1><p id="today-label" class="subtle"></p></div>
+      <div class="identity"><label for="member-select">当前演示身份</label><select id="member-select"><option value="m1">室友 1</option><option value="m2">室友 2</option><option value="m3">室友 3</option><option value="m4">室友 4</option></select></div>
+    </header>
+    <aside class="demo-note">本地单浏览器演示：切换身份模拟四人，记录只保存在当前浏览器。没有独立账户或跨设备同步。</aside>
+    <div id="storage-error" class="error-box" role="alert" hidden></div>
+    <section class="room-card" aria-labelledby="room-heading">
+      <div class="section-head"><div><p class="eyebrow">今天的共同进度</p><h2 id="room-heading">把各自的小进步，放在一起</h2></div><strong id="room-percent" class="big-percent">0%</strong></div>
+      <progress id="room-progress" max="100" value="0" aria-label="宿舍今日共同进度"></progress>
+      <p id="room-summary" class="progress-copy"></p>
+      <div id="room-members" class="room-members"></div>
+      <p id="room-week" class="subtle"></p>
+      <p class="rule">共同进度按全宿舍今日已完成习惯数 ÷ 今日习惯总数计算。这里展示固定顺序的成员状态。</p>
+    </section>
+    <div class="content-grid">
+      <section class="panel" aria-labelledby="habits-heading">
+        <div class="section-head"><div><p class="eyebrow">今天，只做一步</p><h2 id="habits-heading">我的每日习惯</h2></div><span id="personal-summary" class="pill"></span></div>
+        <p class="subtle">每人最初有一个示例习惯，完成记录从空白开始。也可以新增自己真正想坚持的事。</p>
+        <div id="habit-list" class="habit-list"></div>
+        <form id="habit-form" novalidate>
+          <label for="habit-name">新增一个每日习惯</label>
+          <div class="input-row"><input id="habit-name" maxlength="40" autocomplete="off" placeholder="例如：阅读 20 分钟" aria-describedby="name-hint"><button id="add-habit" type="submit">新增习惯</button></div>
+          <p id="name-hint" class="subtle">1—40 个字符；同一人的习惯名称不能重复。</p>
+        </form>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </section>
+      <section class="panel" aria-labelledby="week-heading">
+        <div class="section-head"><div><p class="eyebrow">留下本周的脚印</p><h2 id="week-heading">我的本周进度</h2></div></div>
+        <p id="week-range" class="subtle"></p>
+        <p id="week-summary" class="week-summary"></p>
+        <div class="table-scroll"><table id="week-table"><caption class="sr-only">当前演示身份的本周习惯完成情况</caption><thead></thead><tbody></tbody></table></div>
+        <p class="swipe-hint subtle">左右滑动表格，查看整周记录。</p>
+        <p class="legend"><span>✓ 已完成</span><span>○ 尚未完成</span><span>— 尚未建立</span><span>· 未来日期</span></p>
+        <p class="subtle">从新增当天起计入统计，未来日期不计入。本演示只提供今天的打卡与撤销。</p>
+      </section>
+    </div>
+    <footer>习惯可以不同，进度一起看见。刷新后自动恢复；清理浏览器网站数据会删除这份本地记录。</footer>
+  </main>
+</body>
+</html>

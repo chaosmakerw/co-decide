@@ -1,0 +1,9 @@
+dist/
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.npm-cache/
+.test-browser-profile/
+examples/dorm-habits/artifacts/tmp/
+examples/dorm-habits/artifacts/verification.json
