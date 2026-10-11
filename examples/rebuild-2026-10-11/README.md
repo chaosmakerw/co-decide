@@ -34,4 +34,4 @@ node preview.mjs
 
 页面可直接回看；若浏览器限制小样脚本或数据读取，使用 Node.js 在相应小样目录启动其 server.mjs，或通过当前展示服务的相对地址打开小样。小样 server.mjs 仅用于回看，和成品服务分开。
 
-[来源与 SHA-256 摘要](source/provenance.json) 用实验目录相对路径记录运行文件、截图和原小样的来源与逐文件哈希；没有用户个人绝对路径。没有复制 source-manifest.json、原始会话或用户配置。
+[来源与 SHA-256 摘要](source/provenance.json) 用实验目录相对路径记录运行文件、截图和原小样的来源；原始文件与Git blob分别记录哈希，避免文本换行转换引起误判。没有用户个人绝对路径，没有复制 source-manifest.json、原始会话或用户配置。
