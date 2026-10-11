@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#355e48">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23355e48'/%3E%3Cpath d='M49 14C23 12 12 23 16 39c4 14 27 12 31-8z' fill='%23edf2e6'/%3E%3Cpath d='M18 47l22-23' stroke='%23355e48' stroke-width='3'/%3E%3C/svg%3E">
+  <title>栖日 · 团队请假</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="leave-core.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18m-13 5h2m4 0h2"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 3C9 2 3 6 3 13a7 7 0 0 0 7 7c7 0 11-6 10-17Z"/><path d="M4 20 15 9m-8 8v-5m5 0h5"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.1M4 12h.1M4 18h.1"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3m1-16a3 3 0 0 1 0 6m3 10v-3a6 6 0 0 0-2-4"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m10 6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10h.01"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></symbol>
+  </defs></svg>
+  <aside class="sidebar">
+    <a class="brand" href="./"><span class="brand-mark"><svg class="icon"><use href="#i-leaf"/></svg></span><span>栖日<small>让休假，安排得刚刚好</small></span></a>
+    <div class="workspace-label">TEAM WORKSPACE</div>
+    <nav class="main-nav" aria-label="主导航">
+      <button class="nav-item active" data-view="calendar"><svg class="icon"><use href="#i-calendar"/></svg>团队日历<span class="nav-dot"></span></button>
+      <button class="nav-item" data-view="mine"><svg class="icon"><use href="#i-leaf"/></svg>我的请假</button>
+      <button class="nav-item" data-view="records"><svg class="icon"><use href="#i-list"/></svg>全部登记</button>
+    </nav>
+    <div class="team-section"><div class="section-kicker">我们的小团队 <span>3</span></div><div id="team-members"></div></div>
+    <div class="sidebar-bottom"><div class="trust-card"><svg class="icon"><use href="#i-check"/></svg><b>信任，让安排更简单</b><p>提交即生效<br>遇到重叠，一起协商</p></div><a class="sample-link" href="choice-preview.html">查看流程小样 <span>↗</span></a><div class="local-indicator"><span></span>本地演示 · 数据保存在本机</div></div>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar"><div class="breadcrumb">团队工作台 <span>/</span> 请假管理</div><div class="identity"><span class="demo-tag">演示身份</span><span class="avatar qiao" id="identity-avatar">乔</span><label class="sr-only" for="identity-select">切换本地演示身份</label><select id="identity-select"><option value="qiao">乔雨 · 成员</option><option value="tang">唐辰 · 成员</option><option value="lin">林言 · 负责人</option></select></div></header>
+    <main>
+      <div id="storage-warning" class="storage-warning" role="alert" hidden></div>
+      <section class="page-heading"><div><div class="page-kicker">TIME OFF, TOGETHER</div><h1 id="page-title">团队请假</h1><p id="page-description">把彼此的安排放在一起，让工作和休息都有着落。</p></div><button class="primary-button" id="open-leave"><svg class="icon"><use href="#i-plus"/></svg>登记请假</button></section>
+      <section class="welcome-banner" id="welcome-banner"><div><span class="banner-label"><span class="little-dot"></span>适合我们小团队的简单约定</span><h2>安心休息，提前说一声。</h2><p>请假提交后直接生效；同一天多人休假时，提醒大家一起商量。</p></div><div class="banner-art" aria-hidden="true"><span class="art-orbit"></span><span class="art-sun"></span><span class="art-leaf one"></span><span class="art-leaf two"></span><span class="art-stem"></span><span class="art-ground"></span></div></section>
+      <section class="stats" aria-label="当前月份统计"><div class="stat-card"><span class="stat-icon green"><svg class="icon"><use href="#i-calendar"/></svg></span><div><span class="stat-label">本月登记</span><div><b id="stat-count">0</b><span class="stat-unit">笔有效请假</span></div></div></div><div class="stat-card"><span class="stat-icon blue"><svg class="icon"><use href="#i-leaf"/></svg></span><div><span class="stat-label">本月请假</span><div><b id="stat-days">0</b><span class="stat-unit">个工作日 · 合计</span></div></div></div><div class="stat-card"><span class="stat-icon amber"><svg class="icon"><use href="#i-users"/></svg></span><div><span class="stat-label">需要协商</span><div><b id="stat-conflicts">0</b><span class="stat-unit">天有时段重叠</span></div></div></div></section>
+      <section class="calendar-layout" id="calendar-view">
+        <div class="calendar-card"><div class="calendar-toolbar"><div class="month-title"><h2 id="month-title"></h2><span class="year-label" id="month-year"></span></div><div class="calendar-controls"><label class="sr-only" for="member-filter">日历成员筛选</label><select id="member-filter"><option value="all">全部成员</option><option value="lin">林言</option><option value="qiao">乔雨</option><option value="tang">唐辰</option></select><div class="month-navigation"><button class="icon-button" id="prev-month" aria-label="上个月"><svg class="icon"><use href="#i-left"/></svg></button><button class="today-button" id="today-button">今天</button><button class="icon-button" id="next-month" aria-label="下个月"><svg class="icon"><use href="#i-right"/></svg></button></div></div></div><div class="weekday-row" aria-hidden="true"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div><div class="calendar-grid" id="calendar-grid" role="group" aria-label="月度请假日历"></div><div class="calendar-legend"><div><span class="legend-dot lin"></span>林言 <span class="legend-dot qiao"></span>乔雨 <span class="legend-dot tang"></span>唐辰</div><span>点击日期，查看当天安排</span></div></div>
+        <aside class="day-sidebar"><section class="day-card"><div class="card-heading"><h2>当天安排</h2><svg class="icon muted"><use href="#i-sun"/></svg></div><p id="selected-date-label" class="selected-date"></p><div class="availability" id="day-availability"></div><div id="day-people"></div><div id="day-conflict"></div><button class="secondary-button" id="day-new-leave"><svg class="icon"><use href="#i-plus"/></svg>登记这一天</button></section><section class="gentle-note"><span class="note-icon"><svg class="icon"><use href="#i-info"/></svg></span><div><b>提醒，是为了更好地协作</b><p>安排重叠时会提示协商，系统不会自动批准、拒绝或取消请假。</p></div></section></aside>
+      </section>
+      <section id="list-view" class="list-card" hidden><div class="list-toolbar"><div><h2 id="list-title">我的请假</h2><p id="list-subtitle"></p></div><div class="list-controls"><label class="sr-only" for="status-filter">登记状态筛选</label><select id="status-filter"><option value="all">全部状态</option><option value="registered">已登记</option><option value="cancelled">已撤销</option></select><button class="secondary-button export-button" id="export-records"><svg class="icon"><use href="#i-download"/></svg>导出 CSV</button></div></div><div class="table-scroll"><table><thead><tr><th>成员</th><th>请假安排</th><th>类型</th><th>工作日</th><th>状态</th><th><span class="sr-only">操作</span></th></tr></thead><tbody id="record-rows"></tbody></table></div><div id="list-empty" class="empty-state" hidden><span class="empty-icon"><svg class="icon"><use href="#i-leaf"/></svg></span><h3>暂时没有这类登记</h3><p>有休假计划时，提前说一声就好。</p><button class="primary-button" id="empty-new-leave">登记请假</button></div></section>
+      <section id="upcoming-section" class="upcoming-section"><div class="section-title"><h2>本月的请假安排 <span id="upcoming-count"></span></h2><button class="text-button" id="see-all">查看全部 <svg class="icon"><use href="#i-right"/></svg></button></div><div id="upcoming-list" class="upcoming-list"></div></section>
+      <footer class="page-footer"><span>休假是生活的一部分，协作让它更从容。</span><span>仅按周一至周五计天数 · 不含节假日和额度规则</span></footer>
+      <div class="demo-footnote">本地合成资料演示。身份切换不是真实认证；本机浏览器保存数据，不支持跨设备共享。</div>
+    </main>
+  </div>
+  <dialog id="leave-dialog" class="drawer-dialog" aria-labelledby="leave-dialog-title"><form id="leave-form" novalidate><div class="drawer-heading"><div><div class="page-kicker">给团队一个提前量</div><h2 id="leave-dialog-title">登记请假</h2></div><button class="icon-button" type="button" data-close="leave-dialog" aria-label="关闭登记"><svg class="icon"><use href="#i-close"/></svg></button></div><div class="drawer-body"><div class="form-person" id="form-person"></div><div class="inline-success"><svg class="icon"><use href="#i-check"/></svg>提交后立即登记生效，无需等待审批。</div><fieldset class="type-field"><legend>请假类型</legend><div class="type-options"><label><input type="radio" name="type" value="年假" checked><span>年假</span></label><label><input type="radio" name="type" value="事假"><span>事假</span></label><label><input type="radio" name="type" value="病假"><span>病假</span></label><label><input type="radio" name="type" value="其他"><span>其他</span></label></div></fieldset><div class="date-fields"><label>开始日期<input id="start-date" name="startDate" type="date" required></label><label>结束日期<input id="end-date" name="endDate" type="date" required></label></div><label class="field-label">请假时段<select name="period" id="leave-period"><option value="full">全天</option><option value="am">上午 · 半天</option><option value="pm">下午 · 半天</option></select></label><p class="field-hint">上午 / 下午适用于同一天；多天请假请选择全天。</p><div class="duration-box"><span>合计请假</span><b id="form-duration">1 <small>个工作日</small></b></div><label class="field-label" for="leave-reason">请假说明 <span class="optional">选填 · 仅本人及负责人视角可见</span></label><textarea id="leave-reason" name="reason" maxlength="300" rows="3" placeholder="可以补充交接安排或需要说明的事"></textarea><div class="reason-counter"><span>团队日历不会显示私人说明。</span><span id="reason-count">0 / 300</span></div><div id="form-conflicts" class="form-conflict" hidden></div><div id="form-error" class="form-error" role="alert" hidden></div><div class="counting-note"><svg class="icon"><use href="#i-info"/></svg><span>演示按周一至周五计算工作日，周末不计入；未设置节假日、年假额度或最低在岗人数。</span></div></div><div class="drawer-footer"><button type="button" class="secondary-button" data-close="leave-dialog">先不登记</button><button type="submit" class="primary-button" id="submit-leave">确认登记</button></div></form></dialog>
+  <dialog id="detail-dialog" class="detail-dialog" aria-labelledby="detail-title"><div class="drawer-heading"><div><div class="page-kicker">请假安排</div><h2 id="detail-title">登记详情</h2></div><button class="icon-button" data-close="detail-dialog" aria-label="关闭详情"><svg class="icon"><use href="#i-close"/></svg></button></div><div id="detail-content" class="detail-content"></div><div class="detail-actions" id="detail-actions"></div></dialog>
+  <dialog id="cancel-dialog" class="confirm-dialog" aria-labelledby="cancel-title"><div class="confirm-icon"><svg class="icon"><use href="#i-leaf"/></svg></div><h2 id="cancel-title">撤销这次请假？</h2><p id="cancel-summary"></p><p class="sub">撤销后，团队日历会立即恢复你的在岗安排。原登记会保留，方便回看。</p><div class="confirm-actions"><button class="secondary-button" data-close="cancel-dialog">保留请假</button><button class="primary-button" id="confirm-cancel">确认撤销</button></div><p id="cancel-error" class="form-error" role="alert" hidden></p></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden><svg class="icon"><use href="#i-check"/></svg><span id="toast-text"></span></div>
+</body>
+</html>

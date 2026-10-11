@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>同题，不同答案 · Co-Decide 小样</title>
+<style>
+:root{font-family:"Segoe UI","Microsoft YaHei",sans-serif;color:#18202c;background:#f3f4f6;font-synthesis:none}*{box-sizing:border-box}body{margin:0}main{max-width:1500px;margin:auto;padding:42px 36px 30px}header{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;border-bottom:1px solid #d6dae1;padding-bottom:28px}h1{font-size:clamp(26px,3.2vw,43px);letter-spacing:-1px;margin:10px 0}p{line-height:1.7;margin:8px 0;color:#5c6472}.kicker{font-size:12px;letter-spacing:2px;font-weight:650;color:#6c7280}.tag{display:inline-block;background:white;border:1px solid #dce0e6;padding:8px 12px;border-radius:30px;font-size:12px;white-space:nowrap}section{margin-top:34px}.section-head{display:flex;align-items:baseline;gap:16px;margin-bottom:18px}h2{font-size:22px;letter-spacing:-.5px;margin:0}.section-head span{font-size:13px;color:#717986}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}article{overflow:hidden;background:#fff;border:1px solid #dce0e6;border-radius:14px;box-shadow:0 3px 12px #19223506}a{color:inherit}.shot{display:block;background:#e4e7eb;border-bottom:1px solid #e3e6eb;overflow:hidden;position:relative}.shot img{display:block;width:100%;aspect-ratio:1200/850;object-fit:cover;object-position:top;transition:transform .25s}.shot:hover img{transform:scale(1.025)}.body{padding:20px 21px 21px}.route{font-size:11px;font-weight:700;letter-spacing:1.5px;color:#737b87}h3{font-size:22px;margin:9px 0 8px}.description{font-size:14px;min-height:49px}.operation{border-left:2px solid #b7c0cc;padding-left:10px;font-size:13px;color:#465163;margin:15px 0 13px}.cost{font-size:12px;color:#778090;line-height:1.6;min-height:38px}.open{display:inline-flex;align-items:center;gap:18px;text-decoration:none;font-size:13px;font-weight:650;background:#192735;color:white;padding:11px 15px;border-radius:7px;margin-top:13px}.open:hover{background:#344b62}.foot{font-size:12px;margin-top:30px;display:flex;justify-content:space-between;gap:20px;padding-top:18px;border-top:1px solid #d9dde4}.sources a{color:#5c6472;text-underline-offset:3px}@media(max-width:1050px){main{padding:30px 24px}.grid{gap:14px}.body{padding:17px}h3{font-size:19px}.description{min-height:70px}}@media(max-width:760px){header{display:block}.tag{margin-top:12px}.grid{grid-template-columns:1fr}.description,.cost{min-height:0}.section-head{display:block}.section-head span{display:block;margin-top:8px}.foot{display:block}.shot img{aspect-ratio:1200/850}}
+</style>
+<main>
+ <header><div><div class="kicker">CO-DECIDE · 2026.10.11</div><h1>同题，不同答案。</h1><p>先体验完整方向，再决定把哪条路线做深。</p></div><span class="tag">两道原题 · 同一组输入 · 可操作小样</span></header>
+ <section><div class="section-head"><h2>01 / 整理旅行见闻的小工具</h2><span>海边小城、山间小镇、旧城街区，同样三条记录。</span></div><div class="grid" id="travel-grid"></div></section>
+ <section><div class="section-head"><h2>02 / 乐队排练安排工具</h2><span>苏宜、韩楚、许棠，同样三名成员。</span></div><div class="grid" id="band-grid"></div></section>
+ <div class="foot"><p>每个小样可直接双击打开。操作保留在当前页面；刷新恢复演示状态。</p><p class="sources"><a href="travel/sources.md">旅行参考来源</a> · <a href="band/review.md">排练机制说明</a></p></div>
+</main>
+<script>
+const samples = [
+  {
+    "group": "travel",
+    "code": "旅行 A · 检索",
+    "title": "路过档案馆",
+    "description": "记得几个词就找回那一天，把见闻归类收进档案。",
+    "operation": "搜索“车站”，给记录归类后再次找回。",
+    "cost": "便于长期回查；要维护分类，阅读氛围较克制。",
+    "href": "travel/prototype.html?variant=A",
+    "image": "screenshots/travel-A.png"
+  },
+  {
+    "group": "travel",
+    "code": "旅行 B · 重读",
+    "title": "折页旅行册",
+    "description": "把短短一条见闻展开成一页，页边留给后来想起的细节。",
+    "operation": "翻到山间小镇，写一句旁注并夹进本页。",
+    "cost": "适合重读和回忆，建议先体验；批量整理较慢。",
+    "href": "travel/prototype.html?variant=B",
+    "image": "screenshots/travel-B.png"
+  },
+  {
+    "group": "travel",
+    "code": "旅行 C · 发现联系",
+    "title": "拾景工作台",
+    "description": "把不同日期的片段串成主题，重新发现旅行中的兴趣。",
+    "operation": "把码头与陌生小巷组成“那些临时拐弯”。",
+    "cost": "表达个人联系；需要主动挑选，不能替代日期检索。",
+    "href": "travel/prototype.html?variant=C",
+    "image": "screenshots/travel-C.png"
+  },
+  {
+    "group": "band",
+    "code": "排练 A · 全员同场",
+    "title": "一起到齐",
+    "description": "每一场先满足三人同场，缺一个人就继续找时间。",
+    "operation": "让韩楚周四有空，再安排；反悔后看场次状态。",
+    "cost": "保障全员合奏；没有交集时，这周可能一场也排不出。",
+    "href": "band/prototype.html?mode=joint",
+    "image": "screenshots/band-joint.png"
+  },
+  {
+    "group": "band",
+    "code": "排练 B · 分声部推进",
+    "title": "片段拼场",
+    "description": "从一首歌的声部关系出发，凑不齐时先推进可练部分。",
+    "operation": "拼出两场，再标记练完；整首合奏仍待练。",
+    "cost": "无交集也能推进，建议先体验；吉他手要来两次。",
+    "href": "band/prototype.html?mode=fragments",
+    "image": "screenshots/band-fragments.png"
+  },
+  {
+    "group": "band",
+    "code": "排练 C · 稳定周节奏",
+    "title": "固定锚点",
+    "description": "保留每周固定的一晚，把临时冲突当作单次例外处理。",
+    "operation": "建立周四计划、暂停本周，查看后两周占位。",
+    "cost": "不用每周从零找档；未来占位仍需核对成员空闲。",
+    "href": "band/prototype.html?mode=rhythm",
+    "image": "screenshots/band-rhythm.png"
+  }
+];
+for (const s of samples) {
+ const card=document.createElement('article');
+ const shot=document.createElement('a');shot.className='shot';shot.href=s.href;shot.target='_blank';
+ const img=document.createElement('img');img.src=s.image;img.alt=s.title+'实际页面';shot.append(img);
+ const body=document.createElement('div');body.className='body';
+ const add=(tag,cls,text)=>{const el=document.createElement(tag);el.className=cls;el.textContent=text;body.append(el);return el};
+ add('div','route',s.code);add('h3','',s.title);add('p','description',s.description);add('div','operation','试一试：'+s.operation);add('div','cost',s.cost);
+ const link=add('a','open','打开体验 ↗');link.href=s.href;link.target='_blank';
+ card.append(shot,body);document.getElementById(s.group+'-grid').append(card);
+}
+</script>
+</html>

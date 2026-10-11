@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>页间 · 两种阅读方式</title>
+  <link rel="stylesheet" href="previews.css">
+  <script src="previews.js" defer></script>
+</head>
+<body>
+  <header class="comparison">
+    <div class="comparison-title"><span class="eyebrow">一起决定使用方式</span><strong>你的阅读，从哪里开始？</strong></div>
+    <div class="route-switch" aria-label="切换界面方案">
+      <button class="selected" data-route="library" aria-pressed="true">A · 我的书架</button>
+      <button data-route="today" aria-pressed="false">B · 今日阅读</button>
+    </div>
+    <div class="comparison-note">同样的 3 本书，不同的打开方式<br><span>可试用记录进度 · 小样不保存数据</span></div>
+  </header>
+
+  <section id="library" class="route library-route">
+    <aside class="sidebar">
+      <a class="brand" href="previews.html" aria-label="页间首页"><span class="brand-mark">▤</span><span>页间<small>READ BETWEEN LINES</small></span></a>
+      <div class="side-caption">我的阅读空间</div>
+      <div class="side-link active"><span>▦</span> 我的书架 <b>3</b></div>
+      <div class="sidebar-copy">把想读的、正在读的、<br>已经读过的，都好好收起来。</div>
+      <div class="side-bottom"><span class="avatar">我</span><div>个人阅读空间<small>本地演示</small></div><span class="local-dot"></span></div>
+    </aside>
+    <main class="library-main">
+      <div class="topline"><span>我的书架 <span class="slash">/</span> 全部书籍</span><span class="small-label"><i></i> 自己的节奏，慢慢读</span></div>
+      <div class="page-heading"><div><span class="eyebrow">A LITTLE SPACE FOR YOUR BOOKS</span><h1>让每一本书，都有归处<span>。</span></h1><p>书页之间，是一个慢慢长大的世界。</p></div><span class="outline-book">▤</span></div>
+      <div class="library-banner"><div class="banner-flower">✳</div><div><strong>下一页，接着上次的故事</strong><p>《山间来信》读到了第 <span data-current>36</span> 页，随时可以继续。</p></div><button class="button green" data-progress>记录进度 <span>↗</span></button></div>
+      <div class="shelf-toolbar"><div class="status-tabs" aria-label="筛选书籍"><button class="active" data-status="all">全部 <span>3</span></button><button data-status="reading">在读 <span>1</span></button><button data-status="want">想读 <span>1</span></button><button data-status="done">已读 <span>1</span></button></div><label class="search"><span>⌕</span><input id="search" placeholder="搜索书名或作者" aria-label="搜索书名或作者"><kbd>搜索</kbd></label></div>
+      <div class="books-grid" id="books-grid">
+        <article class="book-card" data-book="山间来信 顾禾" data-book-status="reading">
+          <button class="cover-stage sage-stage" data-progress aria-label="打开山间来信，记录进度"><div class="cover mountain-cover"><div class="cover-top">LETTERS FROM THE MOUNTAINS</div><h2>山间<br>来信</h2><span class="cover-author">顾禾 著</span><svg viewBox="0 0 230 180" class="mountains" aria-hidden="true"><path d="M-10 180V105L63 24 132 95 174 58 250 135V180" fill="#537764"/><path d="M-5 180V138L79 74 158 160 213 103 245 137V180" fill="#325742"/><path d="M-10 180V172L125 124 231 172 250 180" fill="#a6b193"/><path d="M67 180Q132 132 230 180" fill="#d8d6b5"/></svg><span class="cover-publisher">页间文库 · 01</span></div></button>
+          <div class="book-meta"><span class="status-badge reading">正在读</span><span class="book-index">01 / 03</span><h2>山间来信</h2><p>顾禾</p><div class="progress-line"><span class="progress-track"><i data-bar style="width:15%"></i></span><b data-percent>15%</b></div><div class="book-bottom"><span><span data-current>36</span> / 240 页</span><button data-progress>更新进度 ↗</button></div></div>
+        </article>
+        <article class="book-card" data-book="城市慢步 林遥" data-book-status="want">
+          <div class="cover-stage peach-stage"><div class="cover city-cover"><div class="cover-top">A SLOW WALK THROUGH THE CITY</div><h2>城市<br>慢步</h2><span class="cover-author">林遥 著</span><svg viewBox="0 0 230 180" class="city" aria-hidden="true"><circle cx="160" cy="55" r="34" fill="#a75234"/><path d="M20 180V83H68V180M81 180V113H123V180M137 180V94H179V180M190 180V128H221V180" fill="#795c49"/><path d="M29 97H59M29 113H59M29 129H59M90 128H114M90 144H114M147 110H169M147 126H169M147 142H169" stroke="#efc9a2" stroke-width="5"/><path d="M5 180H230" stroke="#5c493c" stroke-width="10"/></svg><span class="cover-publisher">页间文库 · 02</span></div></div>
+          <div class="book-meta"><span class="status-badge want">想读</span><span class="book-index">02 / 03</span><h2>城市慢步</h2><p>林遥</p><div class="progress-line"><span class="progress-track"><i style="width:0"></i></span><b>0%</b></div><div class="book-bottom"><span>0 / 180 页</span><span>等一个好时候</span></div></div>
+        </article>
+        <article class="book-card" data-book="晚风笔记 许川" data-book-status="done">
+          <div class="cover-stage lilac-stage"><div class="cover night-cover"><div class="cover-top">NOTES IN THE EVENING BREEZE</div><h2>晚风<br>笔记</h2><span class="cover-author">许川 著</span><svg viewBox="0 0 230 180" class="night" aria-hidden="true"><circle cx="158" cy="53" r="30" fill="#ead9b2"/><circle cx="170" cy="44" r="26" fill="#57566f"/><path d="M-5 147Q62 91 122 152T240 127V190H-5" fill="#353b53"/><path d="M-5 179Q102 131 234 170V190H-5" fill="#828698"/><path d="M29 32H33M50 65H54M83 25H87M194 97H198" stroke="#ded4c6" stroke-width="2"/></svg><span class="cover-publisher">页间文库 · 03</span></div></div>
+          <div class="book-meta"><span class="status-badge done">已读完</span><span class="book-index">03 / 03</span><h2>晚风笔记</h2><p>许川</p><div class="progress-line"><span class="progress-track"><i style="width:100%"></i></span><b>100%</b></div><div class="book-bottom"><span>120 / 120 页</span><span class="finished">✓ 已读完</span></div></div>
+        </article>
+      </div>
+      <p id="empty" class="empty" hidden>没有找到这本书，换个书名或作者试试。</p>
+      <footer class="library-footer"><span>每一页，都是与你相遇的新世界。</span><span>3 本藏书 · 1 本已读</span></footer>
+    </main>
+  </section>
+
+  <section id="today" class="route today-route" hidden>
+    <header class="today-nav"><a class="today-brand" href="previews.html">▤ <strong>页间</strong><small>READING RITUAL</small></a><span class="today-nav-label">今日阅读</span><span class="today-avatar">我</span></header>
+    <main class="today-main">
+      <div class="today-heading"><span class="eyebrow">ONE PAGE AT A TIME</span><h1>给自己一点阅读的时间。</h1><p>从上次停下的地方开始，一页也是向前。</p></div>
+      <div class="today-layout">
+        <section class="reading-focus"><div class="focus-top"><span class="focus-label">继续你的阅读</span><span>01 / IN PROGRESS</span></div><div class="focus-book"><div class="mini-mountain"><span>顾禾 著</span><h2>山间<br>来信</h2><span class="mini-hills">⌁</span></div><div class="focus-book-info"><span>目前正在读</span><h2>山间来信</h2><p>顾禾 · 共 240 页</p><span class="focus-divider"></span><p class="next-page">下一次，从第 <b id="next-page">37</b> 页开始</p></div></div><div class="focus-progress"><span><b data-current>36</b><span>/ 240 页</span></span><strong data-percent>15%</strong></div><div class="focus-track"><i data-bar style="width:15%"></i></div><div class="focus-bottom"><p>慢一点没关系。<br>让读过的每一页，真正留下来。</p><span>↘</span></div></section>
+        <section class="daily-record"><span class="eyebrow">A SMALL STEP TODAY</span><h2>今天，读到哪一页？</h2><p>合上书时，留住这次小小的进步。</p><form id="inline-progress"><label for="today-page">读到的页码</label><div class="page-input"><input id="today-page" type="number" min="36" max="240" step="1" value="60" required><span>/ 240</span></div><p class="record-hint">试一试：从第 36 页记录到第 60 页。</p><button class="button navy" type="submit">记下这次阅读 <span>↗</span></button><p id="inline-error" class="error" role="alert"></p></form><div class="today-result" id="today-result" aria-live="polite"><span class="result-icon">↗</span><div><strong>阅读是属于你的节奏</strong><p>记录之后，在这里看见本次推进的页数。</p></div></div></section>
+      </div>
+      <section class="reading-queue"><div><span class="eyebrow">ON YOUR READING JOURNEY</span><h2>故事还在继续</h2></div><div class="queue-book"><span class="queue-cover city-chip">城市<br>慢步</span><div><strong>城市慢步</strong><p>林遥 · 180 页</p></div><span class="queue-status">下一本想读</span></div><div class="queue-book"><span class="queue-cover night-chip">晚风<br>笔记</span><div><strong>晚风笔记</strong><p>许川 · 120 页</p></div><span class="queue-status">已读完 ✓</span></div></section>
+      <footer class="today-footer">把阅读变成日常里，一个温柔的停顿。<span>本地演示 · 数据来自同一份 CSV</span></footer>
+    </main>
+  </section>
+  <div class="preview-foot"><span id="route-summary">A · 先浏览书架、搜索和筛选，再进入书籍更新进度。</span><button id="reset">恢复示例为 36 页 ↺</button></div>
+  <dialog id="progress-dialog"><form id="modal-progress"><div class="dialog-head"><span class="eyebrow">留住这次阅读</span><button type="button" class="close" id="close-dialog" aria-label="关闭">×</button></div><h2>《山间来信》</h2><p>当前读到第 <span data-current>36</span> 页，共 240 页。</p><label for="modal-page">现在读到第几页？</label><input id="modal-page" type="number" min="36" max="240" step="1" value="60" required><p id="modal-error" class="error" role="alert"></p><button class="button green" type="submit">保存阅读进度 ↗</button></form></dialog>
+  <div id="toast" class="toast" role="status"></div>
+</body>
+</html>

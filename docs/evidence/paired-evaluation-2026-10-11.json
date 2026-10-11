@@ -1,0 +1,775 @@
+{
+  "date": "2026-10-11",
+  "generated_utc": "2026-10-11T09:19:49.341856+00:00",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "cli_version": "0.162.0-alpha.17.2",
+  "domains": 3,
+  "pairs": [
+    {
+      "baseline": "P01",
+      "treatment": "P02",
+      "task": "borrow",
+      "profile": "approve",
+      "cost_comparable": false,
+      "skill_gross_token_change_percent": null,
+      "choice_mechanism_attribution_supported": false,
+      "attribution_note": "single paired stochastic run; no causal superiority claim"
+    },
+    {
+      "baseline": "P04",
+      "treatment": "P03",
+      "task": "resume",
+      "profile": "backend",
+      "cost_comparable": true,
+      "skill_gross_token_change_percent": 77.319,
+      "choice_mechanism_attribution_supported": false,
+      "attribution_note": "single paired stochastic run; no causal superiority claim"
+    },
+    {
+      "baseline": "P05",
+      "treatment": "P06",
+      "task": "money",
+      "profile": "explicit",
+      "cost_comparable": true,
+      "skill_gross_token_change_percent": -33.133,
+      "choice_mechanism_attribution_supported": false,
+      "attribution_note": "negative control: Skill not read"
+    },
+    {
+      "baseline": "P08",
+      "treatment": "P07",
+      "task": "borrow",
+      "profile": "direct",
+      "cost_comparable": false,
+      "skill_gross_token_change_percent": null,
+      "choice_mechanism_attribution_supported": false,
+      "attribution_note": "single paired stochastic run; no causal superiority claim"
+    }
+  ],
+  "cases": [
+    {
+      "case": "P01",
+      "arm": "native_questions_preserved",
+      "task": "borrow",
+      "profile": "approve",
+      "first_usable": {
+        "criteria": {
+          "B01": "pass",
+          "B02": "pass",
+          "A01": "pass",
+          "A02": "pass",
+          "A03": "pass"
+        },
+        "passed": 5,
+        "total": 5,
+        "scores": {
+          "scale": "各项0-2，附加模型审查判断，独立于固定5条条件",
+          "usability": {
+            "score": 2,
+            "reason": "角色切换与申请、审核、归还入口清楚；确认框说明操作后果，完成后状态及时更新，本轮所有前台流程无阻断。"
+          },
+          "information_organization": {
+            "score": 2,
+            "reason": "首页物品卡同时呈现物主、当前状态、申请人或借用者及处理按钮，概览和待我确认导航可汇总任务；无需逐件开详情找待办。"
+          },
+          "expression": {
+            "score": 2,
+            "reason": "待确认与正式借出、实际归还后再登记等文案和运行行为一致；明确标识本地模拟、记录保存在本机及不跨设备同步。"
+          }
+        },
+        "reviewer": "independent model with real runtime evidence; no human participants"
+      },
+      "final": {
+        "criteria": {
+          "B01": "pass",
+          "B02": "pass",
+          "A01": "pass",
+          "A02": "pass",
+          "A03": "pass"
+        },
+        "passed": 5,
+        "total": 5,
+        "scores": {
+          "scale": "各项0-2，附加模型审查判断，独立于固定5条条件",
+          "usability": {
+            "score": 2,
+            "reason": "角色切换与申请、审核、归还入口清楚；确认框说明操作后果，完成后状态及时更新，本轮所有前台流程无阻断。"
+          },
+          "information_organization": {
+            "score": 2,
+            "reason": "首页物品卡同时呈现物主、当前状态、申请人或借用者及处理按钮，概览和待我确认导航可汇总任务；无需逐件开详情找待办。"
+          },
+          "expression": {
+            "score": 2,
+            "reason": "待确认与正式借出、实际归还后再登记等文案和运行行为一致；明确标识本地模拟、记录保存在本机及不跨设备同步。"
+          }
+        },
+        "reviewer": "independent model with real runtime evidence; no human participants"
+      },
+      "all_acceptance_conditions_passed": true,
+      "explicit_choice_conditions": [
+        "A01"
+      ],
+      "explicit_choice_conditions_fulfilled": 1,
+      "question_calls": 1,
+      "question_items": 1,
+      "feedback_count": 2,
+      "post_delivery_preference_revisions": 0,
+      "operational_recoveries": 1,
+      "technical_stage_timeouts": 1,
+      "recorded_stage_seconds": 749.75,
+      "actual_skill_read_count": 0,
+      "retained_preview_files": [],
+      "token_usage": {
+        "input_tokens": 3098428,
+        "cached_input_tokens": 2920576,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 46348,
+        "reasoning_output_tokens": 7578,
+        "total_tokens": 3144776,
+        "uncached_input_tokens": 177852,
+        "gross_input_plus_output": 3144776
+      },
+      "token_cost_complete": false,
+      "token_tree_thread_count": 4,
+      "token_tree_unclosed_count": 2,
+      "token_tree_unknown_count": 1
+    },
+    {
+      "case": "P02",
+      "arm": "co_decide_skill",
+      "task": "borrow",
+      "profile": "approve",
+      "first_usable": {
+        "criteria": {
+          "B01": "pass",
+          "B02": "pass",
+          "A01": "pass",
+          "A02": "pass",
+          "A03": "pass"
+        },
+        "passed": 5,
+        "total": 5,
+        "scores": {
+          "scale": "各项0-2，作为附加模型审查判断，不与固定5条条件合并计分",
+          "usability": {
+            "score": 2,
+            "reason": "角色切换、申请、批准、归还的按钮容易定位；借用和归还的确认文字解释清楚，成功状态立刻反馈。真实点击流程没有阻断，390px布局仍保留所需操作。"
+          },
+          "information_organization": {
+            "score": 2,
+            "reason": "物品卡并列呈现名称、物主、状态、当前借用者/申请人及可执行操作；概况数量与我的借用/待我确认导航提供聚合入口。四物品场景的待确认与归还都能直接在首页发现。"
+          },
+          "expression": {
+            "score": 2,
+            "reason": "物主确认后才算借出、申请还未变成借出、先交还再登记等文案与实际行为一致；明确标识虚构家庭、本地演示、数据保存在此浏览器。中文名称、状态及按钮统一，插图能辅助区分四件物品。"
+          }
+        },
+        "reviewer": "independent model with real runtime evidence; no human participants"
+      },
+      "final": {
+        "criteria": {
+          "B01": "pass",
+          "B02": "pass",
+          "A01": "pass",
+          "A02": "pass",
+          "A03": "pass"
+        },
+        "passed": 5,
+        "total": 5,
+        "scores": {
+          "scale": "各项0-2，作为附加模型审查判断，不与固定5条条件合并计分",
+          "usability": {
+            "score": 2,
+            "reason": "角色切换、申请、批准、归还的按钮容易定位；借用和归还的确认文字解释清楚，成功状态立刻反馈。真实点击流程没有阻断，390px布局仍保留所需操作。"
+          },
+          "information_organization": {
+            "score": 2,
+            "reason": "物品卡并列呈现名称、物主、状态、当前借用者/申请人及可执行操作；概况数量与我的借用/待我确认导航提供聚合入口。四物品场景的待确认与归还都能直接在首页发现。"
+          },
+          "expression": {
+            "score": 2,
+            "reason": "物主确认后才算借出、申请还未变成借出、先交还再登记等文案与实际行为一致；明确标识虚构家庭、本地演示、数据保存在此浏览器。中文名称、状态及按钮统一，插图能辅助区分四件物品。"
+          }
+        },
+        "reviewer": "independent model with real runtime evidence; no human participants"
+      },
+      "all_acceptance_conditions_passed": true,
+      "explicit_choice_conditions": [
+        "A01"
+      ],
+      "explicit_choice_conditions_fulfilled": 1,
+      "question_calls": 1,
+      "question_items": 1,
+      "feedback_count": 1,
+      "post_delivery_preference_revisions": 0,
+      "operational_recoveries": 0,
+      "technical_stage_timeouts": 0,
+      "recorded_stage_seconds": 653.78,
+      "actual_skill_read_count": 1,
+      "retained_preview_files": [
+        "previews/borrowing-options.html"
+      ],
+      "token_usage": {
+        "input_tokens": 2435620,
+        "cached_input_tokens": 2299904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 54725,
+        "reasoning_output_tokens": 11237,
+        "total_tokens": 2490345,
+        "uncached_input_tokens": 135716,
+        "gross_input_plus_output": 2490345
+      },
+      "token_cost_complete": true,
+      "token_tree_thread_count": 4,
+      "token_tree_unclosed_count": 0,
+      "token_tree_unknown_count": 0
+    },
+    {
+      "case": "P03",
+      "arm": "co_decide_skill",
+      "task": "resume",
+      "profile": "backend",
+      "first_usable": {
+        "criteria": {
+          "R00": "pass",
+          "R01": "pass",
+          "R02": "pass",
+          "R03": "pass"
+        },
+        "passed": 4,
+        "total": 4,
+        "scores": {
+          "可用性/易读性": 2,
+          "信息组织": 2,
+          "表达清晰度": 2
+        },
+        "reviewer": "independent model with real runtime evidence; no human participants"
+      },
+      "final": {
+        "criteria": {
+          "R00": "pass",
+          "R01": "pass",
+          "R02": "pass",
+          "R03": "pass"
+        },
+        "passed": 4,
+        "total": 4,
+        "scores": {
+          "可用性/易读性": 2,
+          "信息组织": 2,
+          "表达清晰度": 2
+        },
+        "reviewer": "independent model with real runtime evidence; no human participants"
+      },
+      "all_acceptance_conditions_passed": true,
+      "explicit_choice_conditions": [
+        "R01"
+      ],
+      "explicit_choice_conditions_fulfilled": 1,
+      "question_calls": 1,
+      "question_items": 1,
+      "feedback_count": 1,
+      "post_delivery_preference_revisions": 0,
+      "operational_recoveries": 0,
+      "technical_stage_timeouts": 0,
+      "recorded_stage_seconds": 342.98,
+      "actual_skill_read_count": 1,
+      "retained_preview_files": [],
+      "token_usage": {
+        "input_tokens": 685927,
+        "cached_input_tokens": 635904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 12430,
+        "reasoning_output_tokens": 5414,
+        "total_tokens": 698357,
+        "uncached_input_tokens": 50023,
+        "gross_input_plus_output": 698357
+      },
+      "token_cost_complete": true,
+      "token_tree_thread_count": 2,
+      "token_tree_unclosed_count": 0,
+      "token_tree_unknown_count": 0
+    },
+    {
+      "case": "P04",
+      "arm": "native_questions_preserved",
+      "task": "resume",
+      "profile": "backend",
+      "first_usable": {
+        "criteria": {
+          "R00": "pass",
+          "R01": "pass",
+          "R02": "pass",
+          "R03": "pass"
+        },
+        "passed": 4,
+        "total": 4,
+        "scores": {
+          "可用性/易读性": 2,
+          "信息组织": 2,
+          "表达清晰度": 2
+        },
+        "reviewer": "independent model with real runtime evidence; no human participants"
+      },
+      "final": {
+        "criteria": {
+          "R00": "pass",
+          "R01": "pass",
+          "R02": "pass",
+          "R03": "pass"
+        },
+        "passed": 4,
+        "total": 4,
+        "scores": {
+          "可用性/易读性": 2,
+          "信息组织": 2,
+          "表达清晰度": 2
+        },
+        "reviewer": "independent model with real runtime evidence; no human participants"
+      },
+      "all_acceptance_conditions_passed": true,
+      "explicit_choice_conditions": [
+        "R01"
+      ],
+      "explicit_choice_conditions_fulfilled": 1,
+      "question_calls": 1,
+      "question_items": 1,
+      "feedback_count": 1,
+      "post_delivery_preference_revisions": 0,
+      "operational_recoveries": 0,
+      "technical_stage_timeouts": 0,
+      "recorded_stage_seconds": 251.68,
+      "actual_skill_read_count": 0,
+      "retained_preview_files": [],
+      "token_usage": {
+        "input_tokens": 385088,
+        "cached_input_tokens": 351488,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 8754,
+        "reasoning_output_tokens": 3563,
+        "total_tokens": 393842,
+        "uncached_input_tokens": 33600,
+        "gross_input_plus_output": 393842
+      },
+      "token_cost_complete": true,
+      "token_tree_thread_count": 2,
+      "token_tree_unclosed_count": 0,
+      "token_tree_unknown_count": 0
+    },
+    {
+      "case": "P05",
+      "arm": "native_questions_preserved",
+      "task": "money",
+      "profile": "explicit",
+      "first_usable": {
+        "criteria": {
+          "M01": "pass",
+          "M02": "pass",
+          "M03": "pass",
+          "M04": "pass"
+        },
+        "passed": 4,
+        "total": 4,
+        "independent_tests": {
+          "run": 61,
+          "passed": 61,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "final": {
+        "criteria": {
+          "M01": "pass",
+          "M02": "pass",
+          "M03": "pass",
+          "M04": "pass"
+        },
+        "passed": 4,
+        "total": 4,
+        "independent_tests": {
+          "run": 61,
+          "passed": 61,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "all_acceptance_conditions_passed": true,
+      "explicit_choice_conditions": [],
+      "explicit_choice_conditions_fulfilled": 0,
+      "question_calls": 0,
+      "question_items": 0,
+      "feedback_count": 0,
+      "post_delivery_preference_revisions": 0,
+      "operational_recoveries": 0,
+      "technical_stage_timeouts": 0,
+      "recorded_stage_seconds": 188.62,
+      "actual_skill_read_count": 0,
+      "retained_preview_files": [],
+      "token_usage": {
+        "input_tokens": 707005,
+        "cached_input_tokens": 639488,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 8234,
+        "reasoning_output_tokens": 2146,
+        "total_tokens": 715239,
+        "uncached_input_tokens": 67517,
+        "gross_input_plus_output": 715239
+      },
+      "token_cost_complete": true,
+      "token_tree_thread_count": 2,
+      "token_tree_unclosed_count": 0,
+      "token_tree_unknown_count": 0
+    },
+    {
+      "case": "P06",
+      "arm": "co_decide_skill",
+      "task": "money",
+      "profile": "explicit",
+      "first_usable": {
+        "criteria": {
+          "M01": "pass",
+          "M02": "pass",
+          "M03": "pass",
+          "M04": "pass"
+        },
+        "passed": 4,
+        "total": 4,
+        "independent_tests": {
+          "run": 61,
+          "passed": 61,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "final": {
+        "criteria": {
+          "M01": "pass",
+          "M02": "pass",
+          "M03": "pass",
+          "M04": "pass"
+        },
+        "passed": 4,
+        "total": 4,
+        "independent_tests": {
+          "run": 61,
+          "passed": 61,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "all_acceptance_conditions_passed": true,
+      "explicit_choice_conditions": [],
+      "explicit_choice_conditions_fulfilled": 0,
+      "question_calls": 0,
+      "question_items": 0,
+      "feedback_count": 0,
+      "post_delivery_preference_revisions": 0,
+      "operational_recoveries": 0,
+      "technical_stage_timeouts": 0,
+      "recorded_stage_seconds": 169.94,
+      "actual_skill_read_count": 0,
+      "retained_preview_files": [],
+      "token_usage": {
+        "input_tokens": 469787,
+        "cached_input_tokens": 427904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 8470,
+        "reasoning_output_tokens": 2424,
+        "total_tokens": 478257,
+        "uncached_input_tokens": 41883,
+        "gross_input_plus_output": 478257
+      },
+      "token_cost_complete": true,
+      "token_tree_thread_count": 2,
+      "token_tree_unclosed_count": 0,
+      "token_tree_unknown_count": 0
+    },
+    {
+      "case": "P07",
+      "arm": "co_decide_skill",
+      "task": "borrow",
+      "profile": "direct",
+      "first_usable": {
+        "criteria": {
+          "D01": "pass",
+          "B01": "pass",
+          "B02": "pass",
+          "D03": "pass",
+          "D02": "fail",
+          "D04": "pass"
+        },
+        "passed": 5,
+        "total": 6,
+        "scores": {
+          "usability": {
+            "score": 1,
+            "max": 2,
+            "rationale": "首页可直接完成两角色借还，确认对话框和刷新保留均可用；必需的已提交借用/归还纠错缺失，因此未给完整可用性的2分。",
+            "evidence": [
+              "02-drill-immediate-borrow.png",
+              "06-first-return-home.png",
+              "returned-history-zhou.png"
+            ]
+          },
+          "informationOrganization": {
+            "score": 2,
+            "max": 2,
+            "rationale": "四物品卡片直接并列展示物主、可借/借用状态和动作，首页统计与借还记录层次明确。",
+            "evidence": [
+              "01-home-initial.png",
+              "returned-history-zhou.png"
+            ]
+          },
+          "expression": {
+            "score": 2,
+            "max": 2,
+            "rationale": "借用/归还按钮与即时状态含义清楚；本机浏览器保存、两家人模拟和直接登记后借出均明确表达。",
+            "evidence": [
+              "01-home-initial.png",
+              "02-drill-immediate-borrow.png",
+              "borrowed-return-dialog.png"
+            ]
+          }
+        },
+        "reviewer": "independent model with real runtime evidence; no human participants"
+      },
+      "final": {
+        "criteria": {
+          "D01": "pass",
+          "D02": "pass",
+          "B01": "pass",
+          "B02": "pass",
+          "D03": "pass",
+          "D04": "pass"
+        },
+        "passed": 6,
+        "total": 6,
+        "scores": {
+          "usability": {
+            "score": 2,
+            "max": 2,
+            "rationale": "两角色首页借还顺畅；最近一次已提交借用和归还都有可见撤销入口，刷新和切换角色后的状态一致。",
+            "evidence": [
+              "03-borrow-and-undo-control-after-refresh.png",
+              "06-undo-borrow-restores-available.png",
+              "13-undo-return-restores-same-loan.png",
+              "19-two-roles-completed-history.png"
+            ]
+          },
+          "informationOrganization": {
+            "score": 2,
+            "max": 2,
+            "rationale": "四物品并列卡片展示物主、状态和动作；统计数量清楚，撤销提示位于列表之前且跨物品页和记录页可见，记录保留借用人和物主。",
+            "evidence": [
+              "03-borrow-and-undo-control-after-refresh.png",
+              "13-undo-return-restores-same-loan.png"
+            ]
+          },
+          "expression": {
+            "score": 2,
+            "max": 2,
+            "rationale": "撤销提示明确指出本次操作、撤销后的状态和入口保留期限；借还确认、状态反馈和本机模拟边界表达清楚。",
+            "evidence": [
+              "03-borrow-and-undo-control-after-refresh.png",
+              "10-returned-available-with-undo.png",
+              "13-undo-return-restores-same-loan.png"
+            ]
+          }
+        },
+        "reviewer": "independent model with real runtime evidence; no human participants"
+      },
+      "all_acceptance_conditions_passed": true,
+      "explicit_choice_conditions": [
+        "D01",
+        "D02"
+      ],
+      "explicit_choice_conditions_fulfilled": 2,
+      "question_calls": 1,
+      "question_items": 1,
+      "feedback_count": 2,
+      "post_delivery_preference_revisions": 1,
+      "operational_recoveries": 0,
+      "technical_stage_timeouts": 1,
+      "recorded_stage_seconds": 933.39,
+      "actual_skill_read_count": 1,
+      "retained_preview_files": [
+        "samples/borrow-flows.html"
+      ],
+      "token_usage": {
+        "input_tokens": 3878892,
+        "cached_input_tokens": 3682560,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 61778,
+        "reasoning_output_tokens": 15248,
+        "total_tokens": 3940670,
+        "uncached_input_tokens": 196332,
+        "gross_input_plus_output": 3940670
+      },
+      "token_cost_complete": true,
+      "token_tree_thread_count": 4,
+      "token_tree_unclosed_count": 0,
+      "token_tree_unknown_count": 0
+    },
+    {
+      "case": "P08",
+      "arm": "native_questions_preserved",
+      "task": "borrow",
+      "profile": "direct",
+      "first_usable": {
+        "criteria": {
+          "D01": "pass",
+          "B01": "pass",
+          "B02": "pass",
+          "D03": "pass",
+          "D02": "fail",
+          "D04": "pass"
+        },
+        "passed": 5,
+        "total": 6,
+        "scores": {
+          "usability": {
+            "score": 1,
+            "max": 2,
+            "rationale": "首页可直接完成两角色借还，确认对话框和刷新保留均可用；必需的已提交借用/归还纠错缺失，因此未给完整可用性的2分。",
+            "evidence": [
+              "02-drill-immediate-borrow.png",
+              "06-first-return-home.png",
+              "returned-history-zhou.png"
+            ]
+          },
+          "informationOrganization": {
+            "score": 1,
+            "max": 2,
+            "rationale": "物品/我的借用/记录导航和卡片分工清楚；但1440像素宽的实测首页统计呈嵌套框，标签被挤成竖排，三个数量难以并列比较。",
+            "evidence": [
+              "01-home-initial.png",
+              "returned-history-zhou.png"
+            ]
+          },
+          "expression": {
+            "score": 2,
+            "max": 2,
+            "rationale": "借用/归还按钮与即时状态含义清楚；本机浏览器保存、两家人模拟和直接登记后借出均明确表达。",
+            "evidence": [
+              "01-home-initial.png",
+              "02-drill-immediate-borrow.png",
+              "borrowed-help.png"
+            ]
+          }
+        },
+        "reviewer": "independent model with real runtime evidence; no human participants"
+      },
+      "final": {
+        "criteria": {
+          "D01": "pass",
+          "D02": "pass",
+          "B01": "pass",
+          "B02": "pass",
+          "D03": "pass",
+          "D04": "pass"
+        },
+        "passed": 6,
+        "total": 6,
+        "scores": {
+          "usability": {
+            "score": 2,
+            "max": 2,
+            "rationale": "两角色首页借还和最近一次借还撤销均能完成；撤销入口刷新、切换家人和进入记录页后仍可找到，撤销后的状态也刷新保留。",
+            "evidence": [
+              "03-borrow-and-undo-control-after-refresh.png",
+              "06-undo-borrow-restores-available.png",
+              "13-undo-return-restores-same-loan.png",
+              "19-two-roles-completed-history.png"
+            ]
+          },
+          "informationOrganization": {
+            "score": 2,
+            "max": 2,
+            "rationale": "物品清单、我的借用和借还记录导航分工清楚；四物品卡片同时给出物主、状态和动作；实测首页三个统计框横向排列，数量易于比较，撤销提示位于页面上方。",
+            "evidence": [
+              "01-initial-home.png",
+              "03-borrow-and-undo-control-after-refresh.png",
+              "13-undo-return-restores-same-loan.png"
+            ]
+          },
+          "expression": {
+            "score": 2,
+            "max": 2,
+            "rationale": "撤销提示指出上次操作及恢复原状态/记录的效果，成功提示明确恢复在家或借出中；使用说明清楚解释本机两角色模拟、刷新保存和仅最近一次撤销的范围。",
+            "evidence": [
+              "03-borrow-and-undo-control-after-refresh.png",
+              "13-undo-return-restores-same-loan.png",
+              "21-help-undo-scope.png"
+            ]
+          }
+        },
+        "reviewer": "independent model with real runtime evidence; no human participants"
+      },
+      "all_acceptance_conditions_passed": true,
+      "explicit_choice_conditions": [
+        "D01",
+        "D02"
+      ],
+      "explicit_choice_conditions_fulfilled": 2,
+      "question_calls": 1,
+      "question_items": 1,
+      "feedback_count": 2,
+      "post_delivery_preference_revisions": 1,
+      "operational_recoveries": 0,
+      "technical_stage_timeouts": 1,
+      "recorded_stage_seconds": 1005.37,
+      "actual_skill_read_count": 0,
+      "retained_preview_files": [],
+      "token_usage": {
+        "input_tokens": 4230400,
+        "cached_input_tokens": 4034048,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 56680,
+        "reasoning_output_tokens": 12046,
+        "total_tokens": 4287080,
+        "uncached_input_tokens": 196352,
+        "gross_input_plus_output": 4287080
+      },
+      "token_cost_complete": false,
+      "token_tree_thread_count": 4,
+      "token_tree_unclosed_count": 2,
+      "token_tree_unknown_count": 2
+    }
+  ],
+  "skill_sha256": "58a00481c020f960f16d1102960d725a3651f43d0b32c3a2218ca69646684ffd",
+  "skill_integrity": {
+    "frozen": true,
+    "repository": true,
+    "source_mirror": true,
+    "installed_cache": true
+  },
+  "configuration_integrity": {
+    "user": {
+      "sha256_unchanged": true,
+      "toml_parses": true
+    },
+    "scoped_project": {
+      "sha256_unchanged": true,
+      "toml_parses": true
+    }
+  },
+  "runtime_scope": "exact single-Skill comparison in isolated case folders, same ordinary Skill catalog; plugin feature and memory disabled in both arms. Actual delegation present in both arms despite requested multi_agent=false; single-agent preregistration unmet.",
+  "review_boundary": "simulated frozen user preferences; anonymous independent model reviewers executing browser/PDF/function checks, not human satisfaction testing",
+  "metering_boundary": "unique self-thread atomic response usage across recursive descendants; input includes cache, output includes reasoning. Incomplete trees are observed lower bounds, not savings estimates.",
+  "external_eval_cost": "simulator/orchestrator, independent grading and invalid pilot costs excluded from both product arms; not completely metered and not claimed zero",
+  "invalid_pilot": "earlier scoped-project pilot contaminated baseline with co-decide; preserved and excluded",
+  "interpretation": "Visible retained comparisons improved process transparency in these runs. Core choice discovery and hard product quality did not outperform native. No evidence of general superiority or choice-driven token savings.",
+  "quality_notes": [
+    "P01 incomplete timed-out candidate is not a first usable delivery; first usable and final both follow operational recovery.",
+    "P07/P08 first usable products lack undisclosed D02. Same natural preference feedback was given to both; not ignored prior feedback.",
+    "Resume reviewer identity wording corrected to independent model inspection; no human participants.",
+    "H237 reviewer received peer information about a different anonymous candidate failure, limiting reviewer independence; no arm labels or token data exposed.",
+    "Three different domains, four pairs; opposing borrowing profiles are counterfactuals, not independent statistical replications."
+  ]
+}

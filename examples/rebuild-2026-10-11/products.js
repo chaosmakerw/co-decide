@@ -1,0 +1,68 @@
+window.CO_DECIDE_PRODUCTS = [
+  {
+    "id": "ui-native",
+    "category": "ui",
+    "name": "阅间 · 原版 Codex",
+    "description": "书架总览与阅读统计，淡紫色导航和插画封面；原版自然输出接近 A，未被询问 A 偏好，也未修订。",
+    "image": "screenshots/ui-native.png",
+    "directory": "products/ui-native",
+    "server": "server.mjs",
+    "entry": "index.html",
+    "caption": "独立 Edge 验收时的真实书架总览，含合成阅读数据；不代表每次启动的初始状态。"
+  },
+  {
+    "id": "ui-browse",
+    "category": "ui",
+    "name": "页间 · 书刊浏览",
+    "description": "以书刊浏览为首页重点，采用留白、书封与纵向叙事；Co-Decide A 路线。",
+    "image": "screenshots/ui-browse.png",
+    "directory": "products/ui-browse",
+    "server": null,
+    "entry": "index.html",
+    "caption": "独立 Edge 验收时的真实书刊总览，含合成阅读数据；不代表每次启动的初始状态。"
+  },
+  {
+    "id": "ui-action",
+    "category": "ui",
+    "name": "一页 · 阅读行动",
+    "description": "以接着阅读和记录进度为重点的行动工作台；Co-Decide B 路线。",
+    "image": "screenshots/ui-action.png",
+    "directory": "products/ui-action",
+    "server": "server.mjs",
+    "entry": "index.html",
+    "caption": "独立 Edge 验收的新浏览器会话初次首页：合成书目初始记录为 36/240 页，尚无本次阅读记录。"
+  },
+  {
+    "id": "biz-native",
+    "category": "biz",
+    "name": "休假小站 · 原版 Codex",
+    "description": "原版首次交付默认审批；首次交付后按唯一一次 A 反馈修订为提交即生效，重叠提示协商。",
+    "image": "screenshots/biz-native.png",
+    "directory": "products/biz-native",
+    "server": "server.cjs",
+    "entry": "index.html",
+    "caption": "独立 Edge 验收时的真实团队概览，含合成休假登记；不代表每次启动的初始状态。"
+  },
+  {
+    "id": "biz-register",
+    "category": "biz",
+    "name": "栖日 · 自主登记",
+    "description": "登记直接生效，日历显示有效安排，重叠仅作协商提醒；Co-Decide A 路线。",
+    "image": "screenshots/biz-register.png",
+    "directory": "products/biz-register",
+    "server": "server.mjs",
+    "entry": "index.html",
+    "caption": "独立 Edge 验收时的真实团队日历，含合成休假数据；不代表每次启动的初始状态。"
+  },
+  {
+    "id": "biz-confirm",
+    "category": "biz",
+    "name": "留白 · 负责人确认",
+    "description": "新申请、修改和撤回都需负责人确认；确认之前保留既有有效安排；Co-Decide B 路线。",
+    "image": "screenshots/biz-confirm.png",
+    "directory": "products/biz-confirm",
+    "server": "server.mjs",
+    "entry": "index.html",
+    "caption": "独立 Edge 验收中已完成负责人确认的合成申请结果，展示成员申请页。"
+  }
+];

@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-11",
+  "source_artifact_directory": "co-decide-imagination-2026-10-11",
+  "core_sha256": "4f78481b8f3f3bbf49ba07b6f70e195bdf7feec3c92884a57f976e861f10622c",
+  "synthetic_data": true,
+  "copied_files": {
+    "index.html": "ee35e38a38ce66fe9dcbffdd4fe31b6a41f4ef01c2c59fe5afd35d48c3e0aaf8",
+    "travel/prototype.html": "ee2ceaf1a488c464305d25291a9e2ce4da2445b6068952cd0e916bade6b17e8c",
+    "travel/notes.csv": "c0e3da4ca7b048af9eb73eed3bf5c1ebb1f94b75e0310ec1570e565e9bcfe1f7",
+    "travel/review.md": "7bbce859afefd6518104616acd3a355b60f0ff2026db41fdbb5e0d5179ccd93b",
+    "travel/sources.md": "75029c5b739c7257c4ecabc7abaeb25ebed48ffa2f2e91ffdfabb787c5b9afbf",
+    "band/prototype.html": "db7f41e8a61d7aa2be16ccb0ffcd1ea9737c78ca8da8ace3907767260ef2ec06",
+    "band/members.csv": "832cea63be12bf4fc5e73c989d431624291dccd8997a588ded3bee464035baa1",
+    "band/review.md": "039fd4d3a6fbcb0623bd58424df407cac95ee7ee319d638337fc8150ceb22818",
+    "screenshots/travel-A.png": "72994e33aa76f3caeeeb0f2a49ade94bf437be806012178bc454b60b13b8838b",
+    "screenshots/travel-B.png": "9ab1735793650dec5c8baa36ef5785aaa5e82b84d6b660b62e89afbd21c263bd",
+    "screenshots/travel-C.png": "4b218e659040147eb7c3c3176d3ed61a2b973fe46f950f8ecfce5a2c18731ec9",
+    "screenshots/band-joint.png": "081941cc2d32f3efe14674b589636f5b0bee8d4d67d1876ce2f723cf1afe807a",
+    "screenshots/band-fragments.png": "81e626f6abf94ca1a003c971a8f0a5f00f64fd1f52731a08ae4a3a1a2cb9e0b8",
+    "screenshots/band-rhythm.png": "beb179b223ff8d1779b0a5bac41423dbad543d45b985d643b781ee5ff2c6bfcf",
+    "screenshots/overview.png": "b315cf74cbc517bc8eac035b5b0376f679ac415e3a5f4f4e95cad95db62f5b7e"
+  }
+}

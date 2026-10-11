@@ -1,0 +1,317 @@
+{
+  "at": "2026-10-11T11:03:13.605746+00:00",
+  "source_unreleased": true,
+  "installed_or_pushed": false,
+  "core_sha256": "7972948aed9389e53bf0d0f0275f4b52f82e74ae242e711f295a404cca293576",
+  "core_characters": 1547,
+  "natural_initial_prompts": [
+    "帮我做一个管理个人阅读的工具。",
+    "给我们小团队做一个请假管理工具。"
+  ],
+  "inherited_model": "gpt-6.1-sol",
+  "inherited_effort": "ultra",
+  "model_parameters_overridden": false,
+  "simulated_profiles_frozen_before_runs": true,
+  "cases": [
+    {
+      "case": "UI-N",
+      "candidate": "native",
+      "profile": "A",
+      "status": "finished",
+      "tree_threads": 4,
+      "usage": {
+        "input_tokens": 4569195,
+        "cached_input_tokens": 4356352,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 80946,
+        "reasoning_output_tokens": 15319,
+        "total_tokens": 4650141,
+        "uncached_input_tokens": 212843,
+        "gross_input_plus_output": 4650141
+      },
+      "recorded_tree_accounting_complete": true,
+      "incomplete_reasons": [],
+      "actual_questions": 0,
+      "decision_replies": 0,
+      "postdelivery_repair_replies": 0,
+      "actual_feedback_observed": true,
+      "fixtures_unchanged": true,
+      "core_sha256": null,
+      "tested_product_main_path_passed": true,
+      "tester_question_snapshot_unchanged": null,
+      "original_preview_file_checks": null
+    },
+    {
+      "case": "UI-A",
+      "candidate": "v1",
+      "profile": "A",
+      "status": "finished",
+      "tree_threads": 7,
+      "usage": {
+        "input_tokens": 5233385,
+        "cached_input_tokens": 4987392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 110032,
+        "reasoning_output_tokens": 17464,
+        "total_tokens": 5343417,
+        "uncached_input_tokens": 245993,
+        "gross_input_plus_output": 5343417
+      },
+      "recorded_tree_accounting_complete": false,
+      "incomplete_reasons": [
+        "generation_after_last_usage_record"
+      ],
+      "actual_questions": 1,
+      "decision_replies": 1,
+      "postdelivery_repair_replies": 0,
+      "actual_feedback_observed": true,
+      "fixtures_unchanged": true,
+      "core_sha256": "1d02395e18adf9ba05e68d44669d1944757ae100746398b13f16ab2bde67e14c",
+      "tested_product_main_path_passed": true,
+      "tester_question_snapshot_unchanged": true,
+      "original_preview_file_checks": {
+        "index.html": false,
+        "server.mjs": false,
+        "prototypes\\focus.html": true,
+        "prototypes\\library.html": true,
+        "prototypes\\notes.html": true,
+        "scripts\\check-prototypes.mjs": false
+      }
+    },
+    {
+      "case": "UI-B",
+      "candidate": "v1",
+      "profile": "B",
+      "status": "finished",
+      "tree_threads": 4,
+      "usage": {
+        "input_tokens": 6886369,
+        "cached_input_tokens": 6621568,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 81222,
+        "reasoning_output_tokens": 12972,
+        "total_tokens": 6967591,
+        "uncached_input_tokens": 264801,
+        "gross_input_plus_output": 6967591
+      },
+      "recorded_tree_accounting_complete": true,
+      "incomplete_reasons": [],
+      "actual_questions": 1,
+      "decision_replies": 1,
+      "postdelivery_repair_replies": 0,
+      "actual_feedback_observed": true,
+      "fixtures_unchanged": true,
+      "core_sha256": "1d02395e18adf9ba05e68d44669d1944757ae100746398b13f16ab2bde67e14c",
+      "tested_product_main_path_passed": true,
+      "tester_question_snapshot_unchanged": true,
+      "original_preview_file_checks": {
+        "preview.html": true,
+        "previews\\focus.html": true,
+        "previews\\journal.html": true,
+        "previews\\library.html": true
+      }
+    },
+    {
+      "case": "UI-FA",
+      "candidate": "v2",
+      "profile": "A",
+      "status": "finished",
+      "tree_threads": 4,
+      "usage": {
+        "input_tokens": 3854839,
+        "cached_input_tokens": 3639296,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 71826,
+        "reasoning_output_tokens": 18196,
+        "total_tokens": 3926665,
+        "uncached_input_tokens": 215543,
+        "gross_input_plus_output": 3926665
+      },
+      "recorded_tree_accounting_complete": false,
+      "incomplete_reasons": [
+        "generation_after_last_usage_record"
+      ],
+      "actual_questions": 1,
+      "decision_replies": 1,
+      "postdelivery_repair_replies": 0,
+      "actual_feedback_observed": true,
+      "fixtures_unchanged": true,
+      "core_sha256": "7972948aed9389e53bf0d0f0275f4b52f82e74ae242e711f295a404cca293576",
+      "tested_product_main_path_passed": true,
+      "tester_question_snapshot_unchanged": true,
+      "original_preview_file_checks": {
+        "previews.css": true,
+        "previews.html": true,
+        "previews.js": true
+      }
+    },
+    {
+      "case": "UI-FB",
+      "candidate": "v2",
+      "profile": "B",
+      "status": "finished",
+      "tree_threads": 4,
+      "usage": {
+        "input_tokens": 6107052,
+        "cached_input_tokens": 5811200,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 122965,
+        "reasoning_output_tokens": 28890,
+        "total_tokens": 6230017,
+        "uncached_input_tokens": 295852,
+        "gross_input_plus_output": 6230017
+      },
+      "recorded_tree_accounting_complete": true,
+      "incomplete_reasons": [],
+      "actual_questions": 1,
+      "decision_replies": 1,
+      "postdelivery_repair_replies": 0,
+      "actual_feedback_observed": true,
+      "fixtures_unchanged": true,
+      "core_sha256": "7972948aed9389e53bf0d0f0275f4b52f82e74ae242e711f295a404cca293576",
+      "tested_product_main_path_passed": true,
+      "tester_question_snapshot_unchanged": true,
+      "original_preview_file_checks": {
+        "app.mjs": false,
+        "books.csv": true,
+        "domain.mjs": false,
+        "index.html": false,
+        "preview.html": false,
+        "server.mjs": true,
+        "styles.css": false
+      }
+    },
+    {
+      "case": "BIZ-N",
+      "candidate": "native",
+      "profile": "A",
+      "status": "finished",
+      "tree_threads": 10,
+      "usage": {
+        "input_tokens": 8865917,
+        "cached_input_tokens": 8452224,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 123346,
+        "reasoning_output_tokens": 17756,
+        "total_tokens": 8989263,
+        "uncached_input_tokens": 413693,
+        "gross_input_plus_output": 8989263
+      },
+      "recorded_tree_accounting_complete": false,
+      "incomplete_reasons": [
+        "generation_after_last_usage_record",
+        "generation_after_last_usage_record"
+      ],
+      "actual_questions": 0,
+      "decision_replies": 0,
+      "postdelivery_repair_replies": 1,
+      "actual_feedback_observed": true,
+      "fixtures_unchanged": true,
+      "core_sha256": null,
+      "tested_product_main_path_passed": true,
+      "tester_question_snapshot_unchanged": null,
+      "original_preview_file_checks": null
+    },
+    {
+      "case": "BIZ-A",
+      "candidate": "v1",
+      "profile": "A",
+      "status": "finished",
+      "tree_threads": 5,
+      "usage": {
+        "input_tokens": 5600185,
+        "cached_input_tokens": 5387648,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 75030,
+        "reasoning_output_tokens": 16273,
+        "total_tokens": 5675215,
+        "uncached_input_tokens": 212537,
+        "gross_input_plus_output": 5675215
+      },
+      "recorded_tree_accounting_complete": true,
+      "incomplete_reasons": [],
+      "actual_questions": 1,
+      "decision_replies": 1,
+      "postdelivery_repair_replies": 0,
+      "actual_feedback_observed": true,
+      "fixtures_unchanged": true,
+      "core_sha256": "1d02395e18adf9ba05e68d44669d1944757ae100746398b13f16ab2bde67e14c",
+      "tested_product_main_path_passed": true,
+      "tester_question_snapshot_unchanged": true,
+      "original_preview_file_checks": {
+        "choice-preview.html": false
+      }
+    },
+    {
+      "case": "BIZ-B",
+      "candidate": "v1",
+      "profile": "B",
+      "status": "finished",
+      "tree_threads": 5,
+      "usage": {
+        "input_tokens": 5218075,
+        "cached_input_tokens": 4900608,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 81091,
+        "reasoning_output_tokens": 18217,
+        "total_tokens": 5299166,
+        "uncached_input_tokens": 317467,
+        "gross_input_plus_output": 5299166
+      },
+      "recorded_tree_accounting_complete": true,
+      "incomplete_reasons": [],
+      "actual_questions": 1,
+      "decision_replies": 1,
+      "postdelivery_repair_replies": 0,
+      "actual_feedback_observed": true,
+      "fixtures_unchanged": true,
+      "core_sha256": "1d02395e18adf9ba05e68d44669d1944757ae100746398b13f16ab2bde67e14c",
+      "tested_product_main_path_passed": true,
+      "tester_question_snapshot_unchanged": true,
+      "original_preview_file_checks": {
+        "routes.html": true
+      }
+    }
+  ],
+  "same_preference_BIZ_A_cost_reduction_percent_lower_bounds": {
+    "total_tokens": 36.86673757348073,
+    "uncached_input_tokens": 48.62446306802387,
+    "output_tokens": 39.171112156048835
+  },
+  "cost_scope": "Each complete independent native-root execution tree, including prototypes, children, failed attempts and same-thread timeout continuation; independent external graders and plugin development not included or measured as zero.",
+  "usage_policy": "Unique own-thread response IDs; cached inputs and reasoning output are subsets. Missing interrupted tails are lower bounds, never zero. No price claim.",
+  "quality": "All displayed products passed real Edge input/state/persistence checks and their disclosed choices. No universal quality superiority or human satisfaction proven.",
+  "candidate_scope": "v1 business products tested. v2 new independent reading A/B tested; no new v2 business model run claimed.",
+  "packaging_assertions": {
+    "tests_run": 51,
+    "passed": 51,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "build": "SUCCESS",
+    "scope": "Seven-file package structure, not 51 collaborations.",
+    "archive_sha256": "d49e4496752d71221f291f1feb7a6ddbd67f70450f2ea14b7d0baf971b9c260e",
+    "archive_bytes": 9544
+  },
+  "portable_gallery": {
+    "checks": 9,
+    "passed": true,
+    "six_entries_http_ok": true,
+    "six_images_loaded": true,
+    "all_own_ports_closed": true,
+    "graceful_group_close": true
+  },
+  "protected_files_unchanged": {
+    "user_config": true,
+    "project_config": true,
+    "installed_skill": true,
+    "local_mirror_skill": true,
+    "portable_manifest": true,
+    "codex_manifest": true,
+    "skill_ui_metadata": true,
+    "marketplace": true
+  },
+  "frozen_harness_unchanged": true,
+  "waiting_scope": "Actual feedback transmitted and observed as native user messages, root wait calls before replies observed. Full 90-minute wait and desktop question-card duration not tested.",
+  "preview_retention_scope": "Tester question-time snapshots all hash-identical. Some original agent preview files or shared dependencies changed; the stable portable archive is tester-preserved, not evidence of perfect agent retention."
+}

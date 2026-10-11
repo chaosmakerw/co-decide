@@ -1,0 +1,13 @@
+{
+  "name": "yuejian-reading-space",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node tests/browser-smoke.mjs",
+    "check": "node --check app.js && node --check reading-model.js && node --check server.mjs"
+  }
+}

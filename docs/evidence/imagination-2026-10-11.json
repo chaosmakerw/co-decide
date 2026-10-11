@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-11",
+  "candidate": "D1",
+  "core_sha256": "4f78481b8f3f3bbf49ba07b6f70e195bdf7feec3c92884a57f976e861f10622c",
+  "stage": "interactive candidate prototypes; no human direction selected",
+  "tasks": [
+    {"prompt": "帮我做一个整理旅行见闻的小工具。", "candidates": 3, "reference_research": "online"},
+    {"prompt": "给乐队做一个排练安排工具。", "candidates": 3, "reference_research": "disabled by test policy"}
+  ],
+  "travel_browser": {"checks": 10, "passed": 10, "failed": 0},
+  "travel_first_inspection": {"status": "failed then repaired", "cause": "click delegation matched body data-variant", "recheck_passed": true},
+  "band_browser": {"candidate_main_flows": 3, "passed": 3, "page_errors": 0, "pure_model_unchanged_after_visual_revision": true},
+  "presentation_browser": {"checks": 8, "passed": 8, "scope": "six links and pictures; gallery and six routes have no horizontal overflow at 390px"},
+  "fixtures_unchanged": true,
+  "protected_files_unchanged": 8,
+  "public_copy_files_hash_verified": 15,
+  "isolated_package": {"Tests run": 51, "Passed": 51, "Failures": 0, "Errors": 0, "Skipped": 0, "build": "BUILD SUCCESS", "payload_files": 7, "archive_bytes": 10512, "sha256": "4d4f8852c3692a94624253eac46ba3680dea6f3c6f8d27a6dc34982b320a2fc9"},
+  "product_network_calls": false,
+  "synthetic_data": true,
+  "config_written": false,
+  "installer_run": false,
+  "final_selected_product_tested": false,
+  "new_native_comparison_run": false,
+  "complete_token_accounting": false,
+  "token_savings_proven": false,
+  "human_satisfaction_proven": false,
+  "waiting_90_minutes_tested": false
+}

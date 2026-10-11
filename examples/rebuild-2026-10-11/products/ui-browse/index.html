@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <title>页间 · 私人阅读书刊</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="reading-data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="页间首页"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 30 34"><path d="M6 4h18v26l-9-6-9 6z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 10h10M10 14h7" stroke="currentColor" stroke-width="1.5"/></svg></span><span>页间<small>A PERSONAL READING JOURNAL</small></span></a>
+      <nav class="main-nav" aria-label="主要导航"><button id="nav-books" class="active" aria-current="page">我的书刊</button><button id="nav-notes">阅读笔记</button></nav>
+      <div class="header-actions"><span id="storage-status" class="storage-status"><i></i> 本地保存</span><button id="add-book" class="button button-dark"><span aria-hidden="true">＋</span> 收一本书</button></div>
+    </div>
+  </header>
+  <div class="notice" id="storage-notice" role="status" hidden></div>
+  <main class="main">
+    <section id="books-view">
+      <div class="edition-line"><span>THE BOOKS WE KEEP</span><span>私人藏书 · VOL. 01</span></div>
+      <div class="page-intro"><div><div class="intro-kicker"><span></span> 留一处地方，给喜欢的书</div><h1>在书页之间，<br>遇见更大的世界<span>。</span></h1></div><div class="intro-aside"><svg class="sun-mark" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="17" fill="none" stroke="currentColor"/><path d="M40 5v9m0 52v9M5 40h9m52 0h9M15 15l7 7m36 36 7 7M15 65l7-7m36-36 7-7" stroke="currentColor"/></svg><p>想读的、正在读的、读过的。<br>慢慢挑选，慢慢读，<br>让每一本书成为自己的故事。</p><span id="collection-count">共 3 本 · 1 本已读完</span></div></div>
+      <div class="collection-toolbar"><div class="filter-tabs" role="group" aria-label="按阅读状态筛选"><button class="active" data-filter="all" aria-pressed="true">全部书目 <span id="count-all">3</span></button><button data-filter="reading" aria-pressed="false">正在读 <span id="count-reading">1</span></button><button data-filter="want" aria-pressed="false">想读 <span id="count-want">1</span></button><button data-filter="done" aria-pressed="false">已读完 <span id="count-done">1</span></button></div><div class="toolbar-right"><label class="search-box"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8" cy="8" r="5.3"/><path d="m12 12 5 5"/></svg><input id="book-search" type="search" placeholder="寻找一本书、一位作者…" aria-label="搜索书名或作者"></label><label class="sort-control"><span class="sr-only">书目排序</span><select id="book-sort"><option value="added">最近收藏</option><option value="title">按书名</option><option value="progress">按阅读进度</option></select><span aria-hidden="true">⌄</span></label></div></div>
+      <div id="book-grid" class="book-grid"></div>
+      <div id="book-empty" class="empty-state" hidden><span class="empty-mark" aria-hidden="true">▤</span><h2 id="empty-title">书架还空着</h2><p id="empty-copy">收下第一本书，开始你的阅读故事。</p><button id="empty-action" class="button button-outline">收一本书 ＋</button></div>
+      <div class="collection-bottom"><span id="showing-count">展示全部 3 本书</span><span class="bottom-caption">每一本书，都是一扇打开的窗。</span></div>
+      <div class="editorial-note"><span class="note-number">01.</span><div><span class="eyebrow">MAKE ROOM FOR READING</span><p>不必急着读完。<br>有些相遇，值得把时间放慢。</p></div><span class="editorial-drawing" aria-hidden="true"><svg viewBox="0 0 180 120"><path d="M90 107V33M91 65Q56 20 34 40Q36 68 88 77M91 47Q118 8 142 27Q139 52 91 59M90 88Q112 52 148 72Q144 99 90 99" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M65 109h52" stroke="currentColor"/></svg></span></div>
+    </section>
+    <section id="notes-view" hidden><div class="edition-line"><span>WORDS THAT STAY WITH US</span><span>我的阅读笔记</span></div><div class="notes-heading"><div class="intro-kicker"><span></span> 让读过的文字，留得更久</div><h1>书合上了，<br>想法还在继续<span>。</span></h1><p id="notes-count">记录阅读时留下的想法。</p></div><div id="notes-list" class="notes-list"></div><div id="notes-empty" class="empty-state"><span class="empty-mark" aria-hidden="true">✎</span><h2>还没有留下笔记</h2><p>打开一本书，在「我的笔记」里记下让你停留的句子或想法。</p><button id="back-to-books" class="button button-outline">回到我的书刊 ↗</button></div></section>
+  </main>
+  <footer class="site-footer"><div class="footer-brand">页间<span>阅读，是一件属于自己的事。</span></div><div class="footer-tools"><button id="import-button">导入书单 / 备份</button><span>·</span><button id="export-button">导出备份 ↗</button></div><p>数据保存在当前浏览器 · 本地演示</p></footer>
+
+  <dialog id="detail-dialog" class="detail-dialog"><div class="detail-top"><span class="eyebrow">ONE BOOK, ONE WORLD</span><button class="icon-button" data-close="detail-dialog" aria-label="关闭书籍详情">×</button></div><div id="detail-content"></div></dialog>
+  <dialog id="book-dialog" class="form-dialog"><div class="dialog-top"><span class="eyebrow">MAKE IT PART OF YOUR COLLECTION</span><button class="icon-button" data-close="book-dialog" aria-label="关闭书籍编辑">×</button></div><h2 id="book-dialog-title">收一本喜欢的书</h2><p class="dialog-description">从书名开始，把它留在你的书刊里。</p><form id="book-form"><label for="title-input">书名 <span>必填</span></label><input id="title-input" maxlength="160" placeholder="例如：山间来信" required><label for="author-input">作者 <span>必填</span></label><input id="author-input" maxlength="120" placeholder="这本书的作者" required><div class="form-row"><div><label for="total-input">总页数</label><input id="total-input" type="number" min="1" max="1000000" step="1" placeholder="240" required></div><div><label for="current-input">已读到第几页</label><input id="current-input" type="number" min="0" max="1000000" step="1" value="0" required></div></div><p class="form-hint">未开始填 0；读到最后一页会自动归入「已读完」。</p><p id="book-error" class="form-error" role="alert"></p><button type="submit" id="book-submit" class="button button-dark wide">加入我的书刊 ↗</button></form></dialog>
+  <dialog id="confirm-dialog" class="form-dialog"><div class="dialog-top"><span class="eyebrow">YOUR COLLECTION</span><button class="icon-button" data-close="confirm-dialog" aria-label="取消操作">×</button></div><h2 id="confirm-title"></h2><p id="confirm-copy" class="confirm-copy"></p><div class="confirm-actions"><button id="confirm-cancel" class="button button-outline">取消</button><button id="confirm-accept" class="button button-dark">确认</button></div></dialog>
+  <input id="import-file" type="file" accept=".csv,.json,text/csv,application/json" hidden>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

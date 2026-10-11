@@ -1,0 +1,429 @@
+{
+  "date": "2026-10-11",
+  "generated_at": "2026-10-11T09:54:31.819007+00:00",
+  "status": "unreleased source candidate; installed cache and metadata untouched",
+  "natural_prompt": "把这些交接材料整理成新人接手后能直接用的东西。",
+  "preference_frozen_before_runs": true,
+  "criteria": {
+    "H00": "实际可阅读成品和有效入口，本地引用可用。",
+    "H01": "时间、场地、名单授权、重复签到、免费及物资事实准确。",
+    "H02": "名单查不到、重复签到、旧场地通知、胸牌用完四场景均能找到动作、可实际说出口的回应和必要升级对象；形式不限。",
+    "H03": "不编造已确认规则、负责人电话或其他材料缺失事实。",
+    "C01": "主体按现场问题找到处理办法，不仅改标题/加摘要。"
+  },
+  "runs": [
+    {
+      "case": "T01",
+      "arm": "native",
+      "blind": "J413",
+      "score": "5/5",
+      "core_sha256": null,
+      "criteria": {
+        "H00": {
+          "result": "pass",
+          "evidence": [
+            "现场速查卡.html loaded in Edge with 1043 visible characters and no page errors",
+            "Both links to 新人接手手册.md actually navigated to readable raw Markdown",
+            "HTML printed as 1 A4 page; rendered PDF is readable without truncation",
+            "Local Markdown references resolve to existing source and product files"
+          ]
+        },
+        "H01": {
+          "result": "pass",
+          "evidence": [
+            "手册 lines 10-19 accurately preserve October 18, 14:30/15:00/16:30, 一楼105, 林舟, free/no payment, roster-only check-in/no self-added places",
+            "手册 lines 60-64 preserve 陈可1028 false, 许澄3041 true, 沈宁7602 false; total3/checked1/not2",
+            "手册 lines 76-79 preserve blue-box location and 30 badges/4 pens/8 spare seat signs and substitute-then-notify order"
+          ]
+        },
+        "H02": {
+          "result": "pass",
+          "evidence": [
+            "手册 lines 70-77 contain actions and spoken replies for all four required scenarios",
+            "Absent-name scenario rechecks registration name/last4, escalates to 林舟 if still absent and forbids self-addition",
+            "Duplicate scenario verifies person and keeps existing record; identity uncertainty escalates under line53",
+            "Old-venue scenario states change to 一楼105 and guides there, with no routine escalation needed",
+            "Badge exhaustion uses spare seat signs first and notifies 林舟; spare-sign exhaustion escalates under line77"
+          ]
+        },
+        "H03": {
+          "result": "pass",
+          "evidence": [
+            "Year, address and contact details explicitly pending or blank at 手册 lines10-13,27-31",
+            "Record workflow and handback templates explicitly marked suggestions, not confirmed source rules",
+            "No fabricated phone, capacity, location detail or confirmed unprovided arrangement"
+          ]
+        },
+        "C01": {
+          "result": "pass",
+          "evidence": [
+            "手册 lines48-54 provide decision branches for incoming attendee",
+            "手册 lines66-79 organize substantive body as situation/action/spoken response",
+            "现场速查卡 gives executable check-in states and material substitution sequence"
+          ]
+        }
+      },
+      "core_in_catalog": false,
+      "core_read_observed": false,
+      "core_read_at": [],
+      "question_count": 0,
+      "questions": [],
+      "decision_replies": 0,
+      "post_delivery_revisions": 0,
+      "valid_protocol": true,
+      "exploratory_after_revision": false,
+      "tree_thread_count": 2,
+      "accounting_complete": true,
+      "usage": {
+        "input_tokens": 348668,
+        "cached_input_tokens": 306048,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 11089,
+        "reasoning_output_tokens": 1931,
+        "total_tokens": 359757,
+        "uncached_input_tokens": 42620,
+        "gross_input_plus_output": 359757
+      },
+      "model": "gpt-6.1-sol",
+      "effort": "ultra",
+      "server_closed": true
+    },
+    {
+      "case": "T02",
+      "arm": "old-0.6.0",
+      "blind": "J728",
+      "score": "5/5",
+      "core_sha256": "58a00481c020f960f16d1102960d725a3651f43d0b32c3a2218ca69646684ffd",
+      "criteria": {
+        "H00": {
+          "result": "pass",
+          "evidence": [
+            "交接包/接待交接包.html真实无头Edge读取，2292字可见正文，无pageerror",
+            "6个本地来源链接均实际点击成功，包括原名单CSV下载",
+            "打印按钮触发；Edge打印为3页，预置PDF也是3页，逐页渲染目检内容可读且未截断",
+            "桌面1280和手机390均无横向溢出"
+          ]
+        },
+        "H01": {
+          "result": "pass",
+          "evidence": [
+            "HTML115,119-127准确保留日期、14:30/15:00/16:30、105/201、林舟、名单内授权、不能自行增加名额、免费不收款",
+            "HTML147准确保留蓝箱位置及30胸牌/4笔/8座位牌",
+            "HTML166-168三人姓名尾号初态准确；159/175保留初始或本次已勾选状态防重复"
+          ]
+        },
+        "H02": {
+          "result": "pass",
+          "evidence": [
+            "HTML139名单查不到：姓名与后四位核对→仍查不到找林舟→不补名单；完整口头回应",
+            "HTML140重复签到：确认本人→保留原记录→不新增；完整口头回应；不能判断按144找林舟",
+            "HTML141旧通知：说明已改一楼105并引导；完整口头回应；已明确规则无需常规升级",
+            "HTML143胸牌用完：备用座位牌替代→告知林舟；完整口头回应；无法判断按144联系林舟"
+          ]
+        },
+        "H03": {
+          "result": "pass",
+          "evidence": [
+            "HTML115/148/196-199明确年份、楼宇地址、联系渠道待补，没有编造",
+            "HTML231明确纸面填写、收尾、异常记录、统计和保管为整理工作方法",
+            "暂时联系不上记录异常、继续联系且不自行决定，未伪造备用负责人或电话"
+          ]
+        },
+        "C01": {
+          "result": "pass",
+          "evidence": [
+            "HTML135-146主体按现场情况→动作→可直接说的话组织",
+            "HTML157-185提供可用纸面登记位置和换班保留同一记录的方法，非仅标题摘要"
+          ]
+        }
+      },
+      "core_in_catalog": true,
+      "core_read_observed": true,
+      "core_read_at": [
+        "2026-10-11T09:33:28.508Z"
+      ],
+      "question_count": 1,
+      "questions": [
+        {
+          "questions": [
+            {
+              "title": "这份交接成品更希望新人怎样使用？推荐 A：可打印交接包，包含一页现场速查和保留现有状态的签到表，适合纸面值守；B：离线签到页面，可查名单、点击签到并导出记录，适合电脑值守，需要保存和交接电子记录。也可以直接说明你想怎样组合。",
+              "options": [
+                "A．可打印交接包（推荐）",
+                "B．离线签到页面"
+              ]
+            }
+          ]
+        }
+      ],
+      "decision_replies": 1,
+      "post_delivery_revisions": 0,
+      "valid_protocol": true,
+      "exploratory_after_revision": false,
+      "tree_thread_count": 2,
+      "accounting_complete": true,
+      "usage": {
+        "input_tokens": 1349507,
+        "cached_input_tokens": 1280640,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 23382,
+        "reasoning_output_tokens": 6224,
+        "total_tokens": 1372889,
+        "uncached_input_tokens": 68867,
+        "gross_input_plus_output": 1372889
+      },
+      "model": "gpt-6.1-sol",
+      "effort": "ultra",
+      "server_closed": true
+    },
+    {
+      "case": "T03",
+      "arm": "rejected-candidate-v1",
+      "blind": "J965",
+      "score": "5/5",
+      "core_sha256": "c5d7e8873673dc61fd3d18993a9171ae322456a914de175e34aa6e77de62c6bf",
+      "criteria": {
+        "H00": {
+          "result": "pass",
+          "evidence": [
+            "新人接手.html loaded in Edge with 1782 visible characters and no page errors",
+            "All6 actual links worked: electronic sheet download,4 textual source navigations,original roster CSV download",
+            "Print modes produced guide1 page,roster1 page,all2 pages; toolbar hidden, expected content retained",
+            "Existing 新人接手打印版.pdf has2 pages with 1323/557 extracted text chars; both rendered pages visually readable and complete",
+            "Desktop1280 and mobile390 had no horizontal document overflow"
+          ]
+        },
+        "H01": {
+          "result": "pass",
+          "evidence": [
+            "HTML lines41-46 accurately preserve times,venue,负责人 and free rule",
+            "HTML line51 accurately preserves blue-box location and materials30/4/8",
+            "HTML lines58-59 preserve roster authorization and duplicate handling",
+            "HTML lines94-96 and 现场签到表.csv lines2-4 preserve all3 names,last4 and original states"
+          ]
+        },
+        "H02": {
+          "result": "pass",
+          "evidence": [
+            "HTML lines67-73 provide same-table situation/action/spoken response for all4 required scenarios",
+            "Absent-name scenario rechecks registration name/last4 and escalates to 林舟 without adding",
+            "Duplicate scenario confirms person and preserves existing result/time; uncertainty escalates under lines59/73",
+            "Old-venue scenario states201→105 and guides to 一楼105; routine escalation unnecessary",
+            "Badge exhaustion substitutes spare seat sign then informs 林舟, stated in action and spoken response"
+          ]
+        },
+        "H03": {
+          "result": "pass",
+          "evidence": [
+            "HTML line43 says year not supplied",
+            "HTML lines52,77,100 require filling 林舟 contact/location at handover",
+            "HTML line80 labels registration columns and handback procedure as auxiliary suggestions",
+            "HTML line103 does not infer capacity from roster3 or badge30; no made-up contact or confirmed absent rule"
+          ]
+        },
+        "C01": {
+          "result": "pass",
+          "evidence": [
+            "HTML lines63-75 provide substantive problem-oriented handling table",
+            "HTML lines58-61,90 give precise original-row and original-state/current-result decisions",
+            "Paper and CSV sheets supply concrete recording positions rather than headings or abstract summary"
+          ]
+        }
+      },
+      "core_in_catalog": true,
+      "core_read_observed": true,
+      "core_read_at": [
+        "2026-10-11T09:33:33.176Z"
+      ],
+      "question_count": 1,
+      "questions": [
+        {
+          "questions": [
+            {
+              "title": "新人现场主要靠哪种成品工作？我推荐“操作手册＋签到表”：陈可来时核对姓名和尾号1028，再登记；许澄已签到，确认本人后不重复登记；查不到则联系林舟。它能打印，也能离线查阅。另一种是本地签到工作台，把同样规则做成搜索和签到按钮，但状态只保存在使用它的浏览器里，多人需共用同一台设备。",
+              "options": [
+                "操作手册＋签到表（推荐）：按时间和现场情况查步骤，适合打印交接。",
+                "本地签到工作台：电脑上搜索、签到和查看处理提示，适合共用一台设备。"
+              ]
+            }
+          ]
+        }
+      ],
+      "decision_replies": 0,
+      "post_delivery_revisions": 0,
+      "valid_protocol": false,
+      "exploratory_after_revision": false,
+      "tree_thread_count": 2,
+      "accounting_complete": true,
+      "usage": {
+        "input_tokens": 906959,
+        "cached_input_tokens": 856960,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 16156,
+        "reasoning_output_tokens": 5345,
+        "total_tokens": 923115,
+        "uncached_input_tokens": 49999,
+        "gross_input_plus_output": 923115
+      },
+      "model": "gpt-6.1-sol",
+      "effort": "ultra",
+      "server_closed": true
+    },
+    {
+      "case": "T04",
+      "arm": "final-candidate-v2",
+      "blind": "J582",
+      "score": "5/5",
+      "core_sha256": "03440544b75c0d28fb964a11a32a078d39ff0c1620c4a90422c6e2d3b85567ae",
+      "criteria": {
+        "H00": {
+          "result": "pass",
+          "evidence": [
+            "新人接手手册.html在真实无头Edge可阅读，2898字可见正文，无pageerror",
+            "6个页内目录锚点全部实际跳转到存在且可见的对应主体内容",
+            "8个本地文件链接（含重复原名单链接）实际跳转/下载均成功，工作CSV有效",
+            "页面明确支持Ctrl+P，Edge打印CSS导出3页，逐页渲染目检完整可读；不要求成品PDF或固定页数"
+          ]
+        },
+        "H01": {
+          "result": "pass",
+          "evidence": [
+            "HTML88-91日期、时间、105新场地、201旧场地、林舟、免费不收款准确",
+            "HTML131蓝箱及胸牌30/笔4/座位牌8准确",
+            "HTML138/141/156-160名单内授权及重复签到准确",
+            "HTML219-221与现场签到工作表.csv2-4保持陈可1028false、许澄3041true、沈宁7602false"
+          ]
+        },
+        "H02": {
+          "result": "pass",
+          "evidence": [
+            "HTML170-172名单查不到/身份不匹配：核对姓名尾号，再查，仍无法确认找林舟，不补名单不增额，提供可说出口话术",
+            "HTML175-177重复签到：确认本人，保留记录，不新增，提供完整话术；无法确认身份按171/201升级林舟",
+            "HTML180-182旧通知：解释201改105，引导一楼105，提供完整话术；无需常规升级",
+            "HTML190-192胸牌用完：座位牌替代，告知林舟，提供完整话术；座位牌也用完继续升级而不承诺"
+          ]
+        },
+        "H03": {
+          "result": "pass",
+          "evidence": [
+            "HTML107-120负责人联系方式、记录方式、年份、地址明确为材料缺口",
+            "HTML225明确不补写许澄签到时间",
+            "HTML249空栏与收尾建议不能替代负责人的实际确认",
+            "没有捏造电话、备用负责人、活动容量或已确认缺失安排"
+          ]
+        },
+        "C01": {
+          "result": "pass",
+          "evidence": [
+            "HTML163-207主体按现场问题提供情况/动作/话术处理表",
+            "HTML152-160正常签到给出原行更新方法",
+            "HTML210-235给出真实工作CSV与纸表记录位置、异常回交表，超过标题摘要改写"
+          ]
+        }
+      },
+      "core_in_catalog": true,
+      "core_read_observed": true,
+      "core_read_at": [
+        "2026-10-11T09:42:05.755Z"
+      ],
+      "question_count": 0,
+      "questions": [],
+      "decision_replies": 0,
+      "post_delivery_revisions": 0,
+      "valid_protocol": true,
+      "exploratory_after_revision": true,
+      "tree_thread_count": 2,
+      "accounting_complete": true,
+      "usage": {
+        "input_tokens": 698022,
+        "cached_input_tokens": 644480,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 17186,
+        "reasoning_output_tokens": 5345,
+        "total_tokens": 715208,
+        "uncached_input_tokens": 53542,
+        "gross_input_plus_output": 715208
+      },
+      "model": "gpt-6.1-sol",
+      "effort": "ultra",
+      "server_closed": true
+    }
+  ],
+  "source": {
+    "old_bytes": 10607,
+    "final_bytes": 5786,
+    "old_chars": 3803,
+    "final_chars": 2074,
+    "bytes_reduction_percent": 45.4511,
+    "old_sha256": "58a00481c020f960f16d1102960d725a3651f43d0b32c3a2218ca69646684ffd",
+    "final_sha256": "03440544b75c0d28fb964a11a32a078d39ff0c1620c4a90422c6e2d3b85567ae"
+  },
+  "final_vs_baseline_delta_percent": {
+    "old": {
+      "total_tokens": -47.9049,
+      "uncached_input_tokens": -22.253,
+      "output_tokens": -26.499
+    },
+    "native": {
+      "total_tokens": 98.8031,
+      "uncached_input_tokens": 25.6265,
+      "output_tokens": 54.9824
+    }
+  },
+  "wait_smoke": {
+    "observed_no_reply_seconds": 151.560488,
+    "no_user_reply": true,
+    "main_product_absent": true,
+    "end": "explicit test interrupt; owned server closed",
+    "full_90_minutes_verified": false,
+    "native_card_lifetime_verified": false
+  },
+  "protected_files_unchanged": {
+    "user_config": true,
+    "project_config": true,
+    "installed_skill": true,
+    "portable_manifest": true,
+    "codex_manifest": true,
+    "ui_metadata": true,
+    "marketplace": true
+  },
+  "package": {
+    "validated_at_utc": "2026-10-11T09:47:59.050711+00:00",
+    "sha256": "745e146834216fdf625402aa3578df62bfa97a25b0fe0a888eceb743ce60a429",
+    "archive_bytes": 10973,
+    "payload_files": 7,
+    "includes_development_reports": false,
+    "manifest_version": "0.6.0",
+    "manifest_version_unchanged": true,
+    "README_sha256": "d1bfda40fa955d30fad3bfbe1de8a0d26813787abfb93ef4afd2b97598e404ca",
+    "SKILL_sha256": "03440544b75c0d28fb964a11a32a078d39ff0c1620c4a90422c6e2d3b85567ae",
+    "all_nine_source_and_copy_hashes_match": true,
+    "other_eight_files_match_original_sha256": true,
+    "Tests run": 51,
+    "Passed": 51,
+    "Failures": 0,
+    "Errors": 0,
+    "Skipped": 0,
+    "build": "BUILD SUCCESS",
+    "published": false,
+    "installed": false
+  },
+  "choice_metrics": {
+    "choice_fulfillment_ratio": null,
+    "counterfactual_test_for_final_candidate": false,
+    "reason": "Final candidate and native made no preference fork in this task. Old question concerned use format; user delegated only that dimension. All completed products met the still-undisclosed problem-oriented preference. Product 5/5 is not five user choices."
+  },
+  "rejected_candidate": "T03 generated a main artifact without an actual reply after accepted:true. Product passed, but wait protocol failed; excluded from valid cost-win claims.",
+  "limitations": [
+    "One task, single runs. T04 is a fresh exploratory run after observing T03, not preregistered causal superiority evidence.",
+    "Equal 5/5 acceptance does not prove higher quality or real human satisfaction.",
+    "Final candidate costs less than old in this sample, but more than native in gross, uncached input, and output tokens.",
+    "All arms allow questions and agent delegation. Each completed run includes its actual recursive child tree.",
+    "Token totals include cached input; caching and reasoning are subsets, not additional amounts. Tokens are not money or subscription credits.",
+    "Simulation/root feedback, anonymous model graders, and plugin-development costs are excluded from application-run totals; not fully metered.",
+    "Original fixture manifest hashes LF text but Windows wrote CRLF. All actual case fixtures were verified byte-identical and unchanged; original manifest preserved and actual hashes separately recorded.",
+    "T01-T03 used the launch harness snapshot; T04 used the later expired-card handler. No such RPC card requests occurred; actual questions returned async accepted:true and old reply arrived as a normal next user turn.",
+    "Official quick_validate.py unavailable because PyYAML is absent; no dependencies installed. Existing stdlib package checks actually passed.",
+    "Final actor could not clean its temporary browser preview cache through automatic approval; no matching browser remained. Root did not bypass approval or delete unrelated files."
+  ]
+}

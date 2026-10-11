@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>六份成品对照 · Co-Decide</title>
+  <style>
+    :root { color-scheme: light; --ink:#262626; --muted:#68645d; --line:#dedbd4; --paper:#f5f3ee; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.65 system-ui,"Microsoft YaHei",sans-serif; }
+    main { max-width:1440px; margin:auto; padding:36px 28px 60px; }
+    header { max-width:800px; margin-bottom:36px; }
+    h1 { margin:0 0 12px; font-size:clamp(28px,4vw,42px); line-height:1.25; letter-spacing:-.04em; }
+    h2 { margin:0; font-size:23px; }
+    h3 { margin:8px 0; font-size:19px; line-height:1.45; }
+    p { margin:8px 0; }
+    header p,.section-note,.description,.status { color:var(--muted); }
+    .mode { display:inline-block; padding:3px 9px; margin-bottom:12px; background:#e8e4dc; border-radius:5px; font-size:12px; }
+    section { margin-top:36px; }
+    .section-note { margin:6px 0 16px; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; align-items:start; }
+    article { overflow:hidden; background:#fff; border:1px solid var(--line); border-radius:10px; }
+    .shot { display:block; background:#ebe8e1; height:300px; overflow:hidden; border-bottom:1px solid var(--line); }
+    .shot img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; }
+    .missing-image { padding:30px; color:var(--muted); }
+    .body { padding:18px; }
+    .badge { display:inline-block; color:#514a40; background:#f0eee8; padding:2px 8px; border-radius:4px; font-size:12px; }
+    .description { min-height:50px; font-size:14px; }
+    .actions { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:16px; }
+    a { color:inherit; text-underline-offset:3px; }
+    .open,button { background:#292824; color:white; border:1px solid #292824; padding:8px 12px; border-radius:5px; font:inherit; font-size:13px; text-decoration:none; cursor:pointer; }
+    button { color:#292824; background:#fff; }
+    .status { font-size:12px; margin-top:12px; }
+    iframe { width:100%; height:640px; display:block; border:0; border-top:1px solid var(--line); background:white; }
+    .empty { border:1px dashed var(--line); padding:24px; border-radius:8px; }
+    @media(max-width:1000px) { .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media(max-width:650px) { main { padding:24px 16px 40px; } .grid { grid-template-columns:1fr; } .shot { height:330px; } .description { min-height:0; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <span class="mode" id="mode">截图对照</span>
+      <h1>同一任务，三种成品</h1>
+      <p>先看实际截图，再进入应用体验。原版保留自主设计与提问能力；阅读版自然接近浏览偏好，请假版在首次交付后按反馈修订。两份 Co-Decide 分别走不同选择路线。</p>
+      <p>全部使用合成资料。请假工具中的身份切换仅供本地演示。</p>
+    </header>
+    <div id="products"></div>
+    <noscript><p class="empty">请启用 JavaScript 查看成品清单，或直接打开 screenshots 文件夹里的截图。</p></noscript>
+  </main>
+  <script src="products.js"></script>
+  <script>
+    (() => {
+      const container = document.getElementById('products');
+      const configured = window.CO_DECIDE_PRODUCTS;
+      let products = Array.isArray(configured) ? configured : configured?.products;
+      let appStates = new Map();
+      const groups = [
+        {id:'ui',name:'个人阅读管理',note:'比较首页的内容主次、整体观感，以及记录阅读进度的使用路径。'},
+        {id:'biz',name:'小团队请假',note:'比较提交之后何时生效、谁需要处理，以及修改或撤回产生的结果。'}
+      ];
+      function text(tag, content, className) {
+        const element = document.createElement(tag);
+        element.textContent = content;
+        if (className) element.className = className;
+        return element;
+      }
+      function badge(product) {
+        if (product.id.endsWith('-native')) return '原版 Codex';
+        if (['ui-browse','biz-register'].includes(product.id)) return 'Co-Decide · A';
+        if (['ui-action','biz-confirm'].includes(product.id)) return 'Co-Decide · B';
+        return 'Co-Decide';
+      }
+      function render() {
+        container.replaceChildren();
+        if (!Array.isArray(products) || !products.length) {
+          container.append(text('p','成品清单尚未就绪。请保留同目录的 products.js、products.json、products 和 screenshots。','empty'));
+          return;
+        }
+        for (const group of groups) {
+          const entries = products.filter(product => product.category === group.id);
+          if (!entries.length) continue;
+          const section = document.createElement('section');
+          section.append(text('h2',group.name),text('p',group.note,'section-note'));
+          const grid = document.createElement('div'); grid.className = 'grid';
+          for (const product of entries) {
+            const card = document.createElement('article');
+            if (product.image) {
+              const shot = document.createElement('a'); shot.className = 'shot'; shot.href = product.image; shot.target = '_blank'; shot.rel = 'noopener';
+              const image = document.createElement('img'); image.src = product.image; image.alt = product.name + '实际截图'; image.loading = 'lazy';
+              image.addEventListener('error',() => { shot.replaceChildren(text('p','截图暂未就绪','missing-image')); });
+              shot.append(image); card.append(shot);
+            }
+            const body = document.createElement('div'); body.className = 'body';
+            body.append(text('span',badge(product),'badge'),text('h3',product.name),text('p',product.description || '','description'));
+            if (product.caption) body.append(text('p',product.caption,'status'));
+            const state = appStates.get(product.id);
+            if (state?.url) {
+              const actions = document.createElement('div'); actions.className = 'actions';
+              const open = document.createElement('a'); open.href = state.url; open.target = '_blank'; open.rel = 'noopener'; open.className = 'open'; open.textContent = '打开应用';
+              const toggle = text('button','展开体验'); toggle.type = 'button'; toggle.setAttribute('aria-expanded','false');
+              let frame;
+              toggle.addEventListener('click',() => {
+                if (frame) { frame.remove(); frame = undefined; toggle.textContent = '展开体验'; toggle.setAttribute('aria-expanded','false'); }
+                else { frame = document.createElement('iframe'); frame.src = state.url; frame.title = product.name; frame.loading = 'lazy'; card.append(frame); toggle.textContent = '收起体验'; toggle.setAttribute('aria-expanded','true'); }
+              });
+              actions.append(open,toggle); body.append(actions);
+              body.append(text('p','应用已启动 · 独立本地地址','status'));
+            } else {
+              body.append(text('p',location.protocol === 'file:' ? '双击 start.cmd 后，在终端显示的地址中体验应用。' : '应用暂未启动；请查看启动终端。','status'));
+            }
+            card.append(body); grid.append(card);
+          }
+          section.append(grid); container.append(section);
+        }
+      }
+      async function initialize() {
+        if (location.protocol !== 'file:') {
+          try {
+            const response = await fetch('products.json');
+            if (response.ok) { const manifest = await response.json(); products = Array.isArray(manifest) ? manifest : manifest.products; }
+          } catch {}
+          try {
+            const response = await fetch('/api/apps');
+            if (response.ok) {
+              const states = await response.json();
+              appStates = new Map(states.map(state => [state.id,state]));
+              document.getElementById('mode').textContent = '本地体验';
+            }
+          } catch {}
+        }
+        render();
+      }
+      initialize();
+    })();
+  </script>
+</body>
+</html>

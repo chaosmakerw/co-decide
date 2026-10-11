@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-11",
+  "version": "0.6.0",
+  "publication": "local candidate; not pushed in this run",
+  "environment": "Windows; Codex CLI 0.162.0-alpha.17.2; existing memory and other skills",
+  "candidates": [
+    {
+      "skill_sha256": "6b689e19c7fd0a191f2eb6eb5b8f25e2295b9b344ff74a3eb3da4e012ddad4e0",
+      "skill_bytes": 10427,
+      "tested_cases": [
+        "01-library",
+        "02-terminal-game",
+        "03-repair-process",
+        "04-debate",
+        "05-config-fix"
+      ]
+    },
+    {
+      "skill_sha256": "58a00481c020f960f16d1102960d725a3651f43d0b32c3a2218ca69646684ffd",
+      "skill_bytes": 10607,
+      "tested_cases": [
+        "06-game-regression"
+      ]
+    }
+  ],
+  "main_suite": {
+    "natural_prompts": true,
+    "prompts_identical_to_previous_suite": true,
+    "open_tasks_read_skill": 4,
+    "clear_fix_direct_execution": 1,
+    "feedback": "simulated only after actual samples and questions",
+    "tasks_delivered": 5,
+    "debate_followup_timed_out_seconds": 480.2,
+    "debate_same_thread_completion_seconds": 107.62
+  },
+  "independent_program_checks": {
+    "tests_run": 37,
+    "passed": 37,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "final_package_checks": {
+    "tests_run": 51,
+    "passed": 51,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "build": "BUILD SUCCESS",
+    "archive_sha256": "135c80867a1eecd5b001cf69469fbdff8a66dccc481919d4746a0eada94bb6c6"
+  },
+  "preview_retention": {
+    "initial_game_files_byte_identical": true,
+    "both_initial_game_windows_launchers_ran": true,
+    "prose_samples_retained": true,
+    "final_reply_preview_index": "omitted in observed open tasks including targeted regression"
+  },
+  "diagnostic_probes": {
+    "included_in_program_pass_count": false,
+    "initial_game_unread_clock_enumeration_advanced_one_stage": true,
+    "regression_unread_1000_codes_blocked": true,
+    "regression_read_clues_then_enumeration_still_opens_drawer": true
+  },
+  "configuration": {
+    "written": false,
+    "before_after_hashes_identical": true,
+    "user_plugin_enabled": false,
+    "project_plugin_enabled": true
+  },
+  "boundaries": [
+    "No no-plugin baseline or blinded human evaluation.",
+    "No full 90-minute wait or desktop card persistence test.",
+    "Candidate 1 five tasks and candidate 2 targeted game regression are distinct.",
+    "Program acceptance counts do not include packaging assertions or document review.",
+    "Counterexample probes are reported separately from passing program checks.",
+    "No GitHub push.",
+    "Reading prerequisites do not prove mental reasoning or eliminate post-reading guessing.",
+    "Independent checks use piped input; regression author separately tested an actual TTY."
+  ]
+}

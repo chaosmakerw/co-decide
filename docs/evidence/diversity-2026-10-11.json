@@ -1,0 +1,58 @@
+{
+  "candidate": "D1",
+  "core": {
+    "sha256": "4f78481b8f3f3bbf49ba07b6f70e195bdf7feec3c92884a57f976e861f10622c",
+    "characters": 1753,
+    "bytes": 4901
+  },
+  "unreleased": true,
+  "installed_or_pushed": false,
+  "protected_files_unchanged": {
+    "user_config": true,
+    "project_config": true,
+    "installed_skill": true,
+    "local_mirror_skill": true,
+    "portable_manifest": true,
+    "codex_manifest": true,
+    "skill_ui_metadata": true,
+    "marketplace": true
+  },
+  "isolated_package": {
+    "Tests run": 51,
+    "Passed": 51,
+    "Failures": 0,
+    "Errors": 0,
+    "Skipped": 0,
+    "build": "BUILD SUCCESS",
+    "archive_bytes": 10101,
+    "sha256": "03b44241e09eb178a7ed3f77b5255a5db646362a5dce1009e6ffff661d13c28e",
+    "payload_files": 7,
+    "skill_characters": 1753,
+    "skill_utf8_bytes": 4901
+  },
+  "behavioral_forward_tests": {
+    "negative_explicit_edit": {
+      "status": "completed",
+      "root_checks": {
+        "exact_requested_change_only": true,
+        "unchanged_visible_h1": true,
+        "only_original_file_in_case": true
+      }
+    },
+    "travel_ui_online": {
+      "status": "interrupted",
+      "preview_generated": false,
+      "passed": false
+    },
+    "band_business_offline_by_test_policy": {
+      "status": "interrupted",
+      "preview_generated": false,
+      "passed": false
+    }
+  },
+  "behavioral_pass_count": 1,
+  "interrupted_count": 2,
+  "new_full_products_tested": 0,
+  "token_savings_proven": false,
+  "waiting_and_question_ui_tested": false
+}
