@@ -1,0 +1,272 @@
+{
+  "date": "2026-10-12",
+  "final_candidate": {
+    "candidate": "E2",
+    "characters": 2205,
+    "bytes": 6239,
+    "sha256": "6074a5b56efb3601ccd94012820d04bca3369799c4b26d715085a1e259763815"
+  },
+  "first_forward_candidate": "E1",
+  "first_forward_core_sha256": "290aa2b936899dee236e62deb687d454fb60b156bf55f564f8a5df91edfc67dc",
+  "prompt": "给社区共享工坊做个管理工具借用和维修的系统。",
+  "fixtures_sha256": {
+    "records.json": "d7e67908608919f825ba71375e4c53cfaf379f33f383c0118a53ec04cd132923",
+    "operations.md": "e05b7cac46bd436239234326f5d4903a3f5be87c8ea8c39f47d05555f5d981b6"
+  },
+  "candidate_count": 3,
+  "first_visual_review": {
+    "reviewer": "root agent",
+    "finding": "same pale green cream and white-card visual defaults despite different skeletons",
+    "accepted_as_complete_visual_divergence": false
+  },
+  "feedback_followup": {
+    "independent_blind_forward": false,
+    "routes_changed": [
+      "journey",
+      "desk"
+    ],
+    "shared_script_unchanged": true,
+    "original_styles_retained": true
+  },
+  "business_model": {
+    "summary": {
+      "cases_run": 7,
+      "cases_passed": 7,
+      "cases_failed": 0,
+      "cases_incomplete": 0,
+      "checks_run": 88,
+      "checks_passed": 88,
+      "checks_failed": 0,
+      "model_action_calls": 31,
+      "actual_business_ui_controls_checked": 0,
+      "identity_control_switches": 13,
+      "passed": true
+    },
+    "scenarios": [
+      {
+        "id": "1",
+        "name": "借用与正常归还闭环",
+        "passed": true
+      },
+      {
+        "id": "2",
+        "name": "时段冲突与首尾衔接",
+        "passed": true
+      },
+      {
+        "id": "3",
+        "name": "原始维修设备不能新增预约",
+        "passed": true
+      },
+      {
+        "id": "4",
+        "name": "损坏归还保留并提示受影响预约、停止借出",
+        "passed": true
+      },
+      {
+        "id": "5",
+        "name": "维修完成恢复使用并保留历史",
+        "passed": true
+      },
+      {
+        "id": "6",
+        "name": "一次借用只能实际归还一次",
+        "passed": true
+      },
+      {
+        "id": "7",
+        "name": "角色与预约对象权限",
+        "passed": true
+      }
+    ],
+    "scope": "real Edge evaluate -> act; business UI controls are zero; role switching is local demo",
+    "missing_T03_reservation": "maintenance handout branch checked with damaged T02/B02; no fabricated T03 checkout id"
+  },
+  "root_ui": {
+    "scope": "actual Edge controls, three routes, same fixture and V01 entry",
+    "viewport": {
+      "width": 1200,
+      "height": 900
+    },
+    "checks": [
+      {
+        "name": "assets related pages and cross-role damaged-return flow",
+        "passed": true,
+        "detail": {
+          "asset": "T02",
+          "loan": "L01",
+          "retainedReservation": "B02",
+          "newRepair": "M02",
+          "nextLoan": "L02",
+          "result": "damaged return, affected resident, blocked handout, repair, next handout"
+        }
+      },
+      {
+        "name": "assets narrow viewport and page exceptions",
+        "passed": true,
+        "detail": {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "width": 390,
+          "scroll": 390,
+          "pageErrors": []
+        }
+      },
+      {
+        "name": "journey related pages and cross-role damaged-return flow",
+        "passed": true,
+        "detail": {
+          "asset": "T02",
+          "loan": "L01",
+          "retainedReservation": "B02",
+          "newRepair": "M02",
+          "nextLoan": "L02",
+          "result": "damaged return, affected resident, blocked handout, repair, next handout"
+        }
+      },
+      {
+        "name": "journey narrow viewport and page exceptions",
+        "passed": true,
+        "detail": {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "width": 390,
+          "scroll": 390,
+          "pageErrors": []
+        }
+      },
+      {
+        "name": "desk related pages and cross-role damaged-return flow",
+        "passed": true,
+        "detail": {
+          "asset": "T02",
+          "loan": "L01",
+          "retainedReservation": "B02",
+          "newRepair": "M02",
+          "nextLoan": "L02",
+          "result": "damaged return, affected resident, blocked handout, repair, next handout"
+        }
+      },
+      {
+        "name": "desk narrow viewport and page exceptions",
+        "passed": true,
+        "detail": {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "width": 390,
+          "scroll": 390,
+          "pageErrors": []
+        }
+      }
+    ],
+    "passed": 6,
+    "failed": 0
+  },
+  "comparison": {
+    "passed": true,
+    "frames": [
+      {
+        "route": "assets",
+        "sameOriginalInput": true
+      },
+      {
+        "route": "journey",
+        "sameOriginalInput": true
+      },
+      {
+        "route": "desk",
+        "sameOriginalInput": true
+      }
+    ],
+    "scope": "three displayed frames, original input equality"
+  },
+  "browser_scenarios": {
+    "Tests run": 14,
+    "Passed": 14,
+    "Failures": 0,
+    "Errors": 0,
+    "Skipped": 0,
+    "build": "not applicable"
+  },
+  "source_scope_checks": {
+    "run": 2,
+    "passed": 2
+  },
+  "isolated_package": {
+    "Tests run": 51,
+    "Passed": 51,
+    "Failures": 0,
+    "Errors": 0,
+    "Skipped": 0,
+    "build": "BUILD SUCCESS",
+    "archive_bytes": 11752,
+    "sha256": "ca9fadec7a341f9673b8544fabe979b524d40575ea92a692c49dd1d0282f3326",
+    "payload_files": 7,
+    "skill_characters": 2205,
+    "skill_utf8_bytes": 6239
+  },
+  "protected_files": {
+    "user_config": {
+      "unchanged": true,
+      "sha256": "20d2230ade582b4ae87d5eb4fc38d035a728a767bc243d73eecb1af0acf3ea77"
+    },
+    "project_config": {
+      "unchanged": true,
+      "sha256": "00ec0add0e0930bcbe0207f9eb90768d4cbe065e6b296b64cbffdfee42a9512c"
+    },
+    "installed_skill": {
+      "unchanged": true,
+      "sha256": "58a00481c020f960f16d1102960d725a3651f43d0b32c3a2218ca69646684ffd"
+    },
+    "local_mirror_skill": {
+      "unchanged": true,
+      "sha256": "58a00481c020f960f16d1102960d725a3651f43d0b32c3a2218ca69646684ffd"
+    },
+    "portable_manifest": {
+      "unchanged": true,
+      "sha256": "3f00f3133fdfcc0ce5e9f411fe1c71a44dbad53bc4ce5662f495546e4da8f15c"
+    },
+    "codex_manifest": {
+      "unchanged": true,
+      "sha256": "261477c589b0407611dec82f745c1d2694b4f5c1168b46d05bd237a7f263fda1"
+    },
+    "skill_ui_metadata": {
+      "unchanged": true,
+      "sha256": "dc098bf7ca9bb3d64271c6f0738ea055af3c78080ae5ed2177234a048d70b1c1"
+    },
+    "marketplace": {
+      "unchanged": true,
+      "sha256": "d9da0f3517cdd7d129130e8816cca021a3f65fe3b861df9d36605b692a080eb0"
+    }
+  },
+  "source_sample_copied_files": 45,
+  "publication_edits": [
+    "sources.md",
+    "before/sources.md"
+  ],
+  "config_written": false,
+  "installed_cache_written": false,
+  "installer_run": false,
+  "github_pushed": false,
+  "third_party_installed": false,
+  "human_answer_received": false,
+  "post_choice_final_product_tested": false,
+  "four_routes_tested": false,
+  "new_native_comparison_run": false,
+  "complete_token_accounting": false,
+  "token_savings_proven": false,
+  "waiting_90_minutes_tested": false,
+  "quick_validate": {
+    "ran": false,
+    "reason": "not rerun; PyYAML absent in preceding same-environment check, no installation"
+  },
+  "visual_review": "root viewed same-viewport actual related pages, title-hidden and stripped-decoration captures; no human score",
+  "public_local_links_checked": 77,
+  "publication_status_scope": "Snapshot of test execution before GitHub publication; repository publication is evidenced by Git commits."
+}

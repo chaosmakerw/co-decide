@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>电影收藏 · 方向小样</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="preview-bar">
+    <span>电影收藏 · 方向小样</span>
+    <nav aria-label="体验三个方向">
+      <a data-route="shelf" href="?route=shelf">A 私人影库</a>
+      <a data-route="next" href="?route=next">B 下一场</a>
+      <a data-route="notes" href="?route=notes">C 余味手记</a>
+      <a href="compare.html">并排看</a>
+    </nav>
+    <button id="reset-demo" type="button">恢复样本</button>
+  </div>
+  <main id="app"></main>
+  <footer class="demo-footer">虚构电影与合成记录。图形封面为原创示意；体验内容只保存在这个浏览器的当前方案里。</footer>
+  <dialog id="add-dialog" aria-labelledby="add-heading">
+    <form id="add-form">
+      <div class="dialog-heading"><h2 id="add-heading">收藏一部电影</h2><button class="icon-button" type="button" data-close="add-dialog" aria-label="关闭收藏窗口">×</button></div>
+      <p id="add-intro">留住片名，其他以后再补。</p>
+      <label>片名<input id="film-title" name="title" required maxlength="80" autocomplete="off" placeholder="例如：雨停之后"></label>
+      <div class="form-pair"><label>年份<input id="film-year" name="year" type="number" min="1888" max="2100" placeholder="可不填"></label><label>观看状态<select id="film-state" name="state"><option>想看</option><option>看过</option></select></label></div>
+      <label id="note-label">留一句话<textarea id="film-note" name="note" rows="3" maxlength="500" placeholder="为什么想看，或看完留下了什么"></textarea></label>
+      <p class="form-error" id="add-error" role="alert"></p>
+      <div class="dialog-actions"><button type="button" data-close="add-dialog">先不加</button><button class="primary" id="save-film" type="submit">加入收藏</button></div>
+    </form>
+  </dialog>
+  <dialog id="detail-dialog" aria-labelledby="detail-heading">
+    <form id="detail-form">
+      <div class="dialog-heading"><h2 id="detail-heading"></h2><button class="icon-button" type="button" data-close="detail-dialog" aria-label="关闭电影详情">×</button></div>
+      <p id="detail-year"></p>
+      <label>观看状态<select id="detail-state"><option>想看</option><option>看过</option></select></label>
+      <label>我的一句话<textarea id="detail-note" rows="5" maxlength="500"></textarea></label>
+      <p class="form-error" id="detail-error" role="alert"></p>
+      <div class="dialog-actions"><button id="toggle-watched" type="button">标为看过</button><button class="primary" id="save-detail" type="submit">保存修改</button></div>
+    </form>
+  </dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

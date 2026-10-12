@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-12",
+  "candidate": "D3",
+  "core": {
+    "characters": 2127,
+    "bytes": 6005,
+    "sha256": "04cdabe470104c5dfa1f8d7826a15934338c475a75d51a4cbe829cfdf87e1829"
+  },
+  "first_forward_candidate": "D2",
+  "first_forward_core_sha256": "915b89f5f59010aaefdf6362f73868947f5527efe6cc3b0b98ac6c66f7ba11d9",
+  "prompt": "帮我做一个收藏电影的小工具。",
+  "candidate_count": 3,
+  "first_browser": {
+    "checks": 12,
+    "passed": 12,
+    "scope": "collect, watch transition, 390px layout and page errors for each route"
+  },
+  "first_visual_review": {
+    "reviewer": "root agent",
+    "finding": "B/C remained soft two-column layouts",
+    "action": "revise B before asking user; retain first files"
+  },
+  "D3_followup": {
+    "independent_blind_forward": false,
+    "checks": 8,
+    "passed": 8,
+    "scope": "one unchanged shared source check, four B browser checks, three comparison frame checks"
+  },
+  "comparison_probe_first_attempt": "timed out because parent contentDocument cannot read file child frame; frameLocator recheck passed",
+  "screenshot_viewport": {
+    "width": 1200,
+    "height": 900
+  },
+  "visual_review": "root inspected actual screenshots with brand and route navigation hidden; no human satisfaction score",
+  "human_answer_received": false,
+  "post_choice_final_product_tested": false,
+  "four_routes_tested": false,
+  "new_native_comparison_run": false,
+  "complete_token_accounting": false,
+  "token_savings_proven": false,
+  "quick_validate": {
+    "ran": false,
+    "reason": "PyYAML missing in existing Python; no dependency installation"
+  },
+  "isolated_package": {
+    "Tests run": 51,
+    "Passed": 51,
+    "Failures": 0,
+    "Errors": 0,
+    "Skipped": 0,
+    "build": "BUILD SUCCESS",
+    "payload_files": 7,
+    "archive_bytes": 11420,
+    "sha256": "076d24a8b62a197f60d29dc473b3f7e16fa88de306c0f646e57bf4f95768e24b"
+  },
+  "protected_files_unchanged": 8,
+  "sample_copy_files": 26,
+  "config_written": false,
+  "third_party_installed": false,
+  "installer_run": false,
+  "waiting_90_minutes_tested": false,
+  "public_link_adjustments": [
+    "sources.md",
+    "before/sources.md"
+  ],
+  "publication_status_scope": "Snapshot of test execution before GitHub publication; repository publication is evidenced by Git commits."
+}

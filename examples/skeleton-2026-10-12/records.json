@@ -1,0 +1,23 @@
+{
+  "demo_time": "2026-10-13T10:00:00",
+  "people": [
+    {"id": "R01", "name": "阿澄", "role": "resident"},
+    {"id": "R02", "name": "小禾", "role": "resident"},
+    {"id": "V01", "name": "许师", "role": "steward"}
+  ],
+  "assets": [
+    {"id": "T01", "name": "电钻", "area": "木工区", "state": "available"},
+    {"id": "T02", "name": "缝纫机", "area": "缝纫区", "state": "borrowed"},
+    {"id": "T03", "name": "投影仪", "area": "活动区", "state": "maintenance"}
+  ],
+  "reservations": [
+    {"id": "B01", "asset_id": "T01", "resident_id": "R01", "start": "2026-10-13T10:00:00", "end": "2026-10-13T12:00:00", "state": "confirmed"},
+    {"id": "B02", "asset_id": "T02", "resident_id": "R01", "start": "2026-10-13T11:00:00", "end": "2026-10-13T12:00:00", "state": "confirmed"}
+  ],
+  "loans": [
+    {"id": "L01", "asset_id": "T02", "resident_id": "R02", "start": "2026-10-13T09:00:00", "end": "2026-10-13T11:00:00", "state": "active"}
+  ],
+  "repairs": [
+    {"id": "M01", "asset_id": "T03", "issue": "画面偏色，等待检修", "state": "open"}
+  ]
+}

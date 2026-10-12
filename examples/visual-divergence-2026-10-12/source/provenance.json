@@ -1,0 +1,146 @@
+{
+  "date": "2026-10-12",
+  "candidate": "D3",
+  "core_sha256": "04cdabe470104c5dfa1f8d7826a15934338c475a75d51a4cbe829cfdf87e1829",
+  "first_candidate_core": "D2",
+  "synthetic_data": true,
+  "hash_scope": "local_copy_sha256 is original local bytes; portable_sha256 normalizes text CRLF/CR to LF for cross-platform checks",
+  "files": {
+    "index.html": {
+      "local_copy_sha256": "721587cbb067435bb2360f2fd20f8ac8803d38ec7c34147e13b05d79126041e0",
+      "portable_sha256": "721587cbb067435bb2360f2fd20f8ac8803d38ec7c34147e13b05d79126041e0",
+      "mode": "UTF-8 with line endings normalized to LF"
+    },
+    "compare.html": {
+      "local_copy_sha256": "d309067fccfeb28a43c8270890f5912c79abc430bdd4116c9020fef29f2e587f",
+      "portable_sha256": "d309067fccfeb28a43c8270890f5912c79abc430bdd4116c9020fef29f2e587f",
+      "mode": "UTF-8 with line endings normalized to LF"
+    },
+    "app.js": {
+      "local_copy_sha256": "3578838fd574b6f3348e0a2f3900074e6147438f0b377bf4b5835d6210647c58",
+      "portable_sha256": "3578838fd574b6f3348e0a2f3900074e6147438f0b377bf4b5835d6210647c58",
+      "mode": "UTF-8 with line endings normalized to LF"
+    },
+    "styles.css": {
+      "local_copy_sha256": "47bf3e5d48edb7fe473c697071331bae6b868c6726186dbb6441d41740b2ec7c",
+      "portable_sha256": "66830f688837a267139662261e8523d490407d44d737b6726e73b3a7c63f9545",
+      "mode": "UTF-8 with line endings normalized to LF"
+    },
+    "films.csv": {
+      "local_copy_sha256": "9ab03ff6ec005221384127ac130c4bbae1980b4115bc8d417313584e9f17ecae",
+      "portable_sha256": "9ab03ff6ec005221384127ac130c4bbae1980b4115bc8d417313584e9f17ecae",
+      "mode": "UTF-8 with line endings normalized to LF"
+    },
+    "choice.md": {
+      "local_copy_sha256": "02ca32027517da5a08750bb709a440ab8fc4ae9be64bfb41dae720c46bcf4275",
+      "portable_sha256": "02ca32027517da5a08750bb709a440ab8fc4ae9be64bfb41dae720c46bcf4275",
+      "mode": "UTF-8 with line endings normalized to LF"
+    },
+    "sources.md": {
+      "local_copy_sha256": "e9311619a359b0cc5181e2a16e8f55cc74353b049bfaf9c5bc117daead69638f",
+      "portable_sha256": "e9311619a359b0cc5181e2a16e8f55cc74353b049bfaf9c5bc117daead69638f",
+      "mode": "UTF-8 with line endings normalized to LF",
+      "original_copy_sha256": "4f5a0cec2466564a9ef7241c997d405cb18de5aaa310ec9b6365409ee913ae4c",
+      "publication_edit": "relative link points to retained local evaluation Skill snapshot"
+    },
+    "before/index.html": {
+      "local_copy_sha256": "721587cbb067435bb2360f2fd20f8ac8803d38ec7c34147e13b05d79126041e0",
+      "portable_sha256": "721587cbb067435bb2360f2fd20f8ac8803d38ec7c34147e13b05d79126041e0",
+      "mode": "UTF-8 with line endings normalized to LF"
+    },
+    "before/compare.html": {
+      "local_copy_sha256": "c620683f6ae6bc8fb8e320307e60c201ed835b5411d56e02b883113f03a67e04",
+      "portable_sha256": "c620683f6ae6bc8fb8e320307e60c201ed835b5411d56e02b883113f03a67e04",
+      "mode": "UTF-8 with line endings normalized to LF"
+    },
+    "before/app.js": {
+      "local_copy_sha256": "a443a00a06fdace3f3cebe3099954be0139cb1e8a9eafa253818d56e7bdb662b",
+      "portable_sha256": "a443a00a06fdace3f3cebe3099954be0139cb1e8a9eafa253818d56e7bdb662b",
+      "mode": "UTF-8 with line endings normalized to LF"
+    },
+    "before/styles.css": {
+      "local_copy_sha256": "3602a86436a3ca76e8222b0d4230ff80d1a04655b8d9a40581ff914438014536",
+      "portable_sha256": "3602a86436a3ca76e8222b0d4230ff80d1a04655b8d9a40581ff914438014536",
+      "mode": "UTF-8 with line endings normalized to LF"
+    },
+    "before/choice.md": {
+      "local_copy_sha256": "1418c27efa75d35dae14828d1f50707e1f97be6d608e44ef44e9ba068aa5a408",
+      "portable_sha256": "1418c27efa75d35dae14828d1f50707e1f97be6d608e44ef44e9ba068aa5a408",
+      "mode": "UTF-8 with line endings normalized to LF"
+    },
+    "before/sources.md": {
+      "local_copy_sha256": "b0c796508bf5355ac7996d17c837db56b33b7284f9b2db15d6c4a3e67c820599",
+      "portable_sha256": "b0c796508bf5355ac7996d17c837db56b33b7284f9b2db15d6c4a3e67c820599",
+      "mode": "UTF-8 with line endings normalized to LF",
+      "original_copy_sha256": "6bfb19cf796dac51df7eed598fd75164c10b03a1efbe4bb1b0c7fa173425d822",
+      "publication_edit": "relative link points to retained local evaluation Skill snapshot"
+    },
+    "before/films.csv": {
+      "local_copy_sha256": "9ab03ff6ec005221384127ac130c4bbae1980b4115bc8d417313584e9f17ecae",
+      "portable_sha256": "9ab03ff6ec005221384127ac130c4bbae1980b4115bc8d417313584e9f17ecae",
+      "mode": "UTF-8 with line endings normalized to LF"
+    },
+    "screenshots/next-action.png": {
+      "local_copy_sha256": "2499faf8623d11077612b4a1eb1d0faea00926f3fa0b13e732979ba0bce000d6",
+      "portable_sha256": "2499faf8623d11077612b4a1eb1d0faea00926f3fa0b13e732979ba0bce000d6",
+      "mode": "binary"
+    },
+    "screenshots/next-blind.png": {
+      "local_copy_sha256": "6b64551240f980326dbe8074613a6b3bea8c3ca1396ea3c1e64103ecd856ca6c",
+      "portable_sha256": "6b64551240f980326dbe8074613a6b3bea8c3ca1396ea3c1e64103ecd856ca6c",
+      "mode": "binary"
+    },
+    "screenshots/next.png": {
+      "local_copy_sha256": "2c095c0621a107551144b5256a1985ff7073e5ae17d5813ac3819e1e71ccedc3",
+      "portable_sha256": "2c095c0621a107551144b5256a1985ff7073e5ae17d5813ac3819e1e71ccedc3",
+      "mode": "binary"
+    },
+    "screenshots/notes-action.png": {
+      "local_copy_sha256": "ec67fe11489b149a23ccd673c80479bb13a1bbdaccf23bd0f11fa669a451807a",
+      "portable_sha256": "ec67fe11489b149a23ccd673c80479bb13a1bbdaccf23bd0f11fa669a451807a",
+      "mode": "binary"
+    },
+    "screenshots/notes-blind.png": {
+      "local_copy_sha256": "ef682f5c930d5ce6bd0bdc124a6556efa2d38e757e2835ad627d7b49aa5d325b",
+      "portable_sha256": "ef682f5c930d5ce6bd0bdc124a6556efa2d38e757e2835ad627d7b49aa5d325b",
+      "mode": "binary"
+    },
+    "screenshots/notes.png": {
+      "local_copy_sha256": "83c7d20d22a197370fffa405622038d0c356b0270a0dfb5aa58a8e940dedf422",
+      "portable_sha256": "83c7d20d22a197370fffa405622038d0c356b0270a0dfb5aa58a8e940dedf422",
+      "mode": "binary"
+    },
+    "screenshots/overview.png": {
+      "local_copy_sha256": "108624ee7807fe98491a877201f873754b30c9af0d6c3ae099cd820f810730f9",
+      "portable_sha256": "108624ee7807fe98491a877201f873754b30c9af0d6c3ae099cd820f810730f9",
+      "mode": "binary"
+    },
+    "screenshots/shelf-action.png": {
+      "local_copy_sha256": "d95e546889b83dc1ba941bb399bd4db724aa6dd4dd181316e748dcf7f427fae1",
+      "portable_sha256": "d95e546889b83dc1ba941bb399bd4db724aa6dd4dd181316e748dcf7f427fae1",
+      "mode": "binary"
+    },
+    "screenshots/shelf-blind.png": {
+      "local_copy_sha256": "cc3f83edfda56cae7da1c68b0fd551d55e8ac14c51e356ed91cdef8ab8be3c8b",
+      "portable_sha256": "cc3f83edfda56cae7da1c68b0fd551d55e8ac14c51e356ed91cdef8ab8be3c8b",
+      "mode": "binary"
+    },
+    "screenshots/shelf.png": {
+      "local_copy_sha256": "17541cef11295f8fa476f8669b1aa10f6ca15252da01bedf50ce63abfa68880f",
+      "portable_sha256": "17541cef11295f8fa476f8669b1aa10f6ca15252da01bedf50ce63abfa68880f",
+      "mode": "binary"
+    },
+    "frozen/SKILL.md": {
+      "local_copy_sha256": "04cdabe470104c5dfa1f8d7826a15934338c475a75d51a4cbe829cfdf87e1829",
+      "portable_sha256": "04cdabe470104c5dfa1f8d7826a15934338c475a75d51a4cbe829cfdf87e1829",
+      "mode": "UTF-8 with line endings normalized to LF",
+      "purpose": "evaluation instruction snapshot; outside runtime package"
+    },
+    "before/frozen/SKILL.md": {
+      "local_copy_sha256": "915b89f5f59010aaefdf6362f73868947f5527efe6cc3b0b98ac6c66f7ba11d9",
+      "portable_sha256": "915b89f5f59010aaefdf6362f73868947f5527efe6cc3b0b98ac6c66f7ba11d9",
+      "mode": "UTF-8 with line endings normalized to LF",
+      "purpose": "evaluation instruction snapshot; outside runtime package"
+    }
+  }
+}
