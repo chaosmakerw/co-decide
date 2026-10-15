@@ -1,0 +1,49 @@
+{
+  "selected_at_utc": "2026-10-15T08:25:28.382762+00:00",
+  "authority": "用户明确要求选择尽可能不同的两个方向",
+  "type": "执行者代选，不代表真实用户偏好",
+  "viewed": "实际渲染的 A/B/C 1440x1000 首屏，图片位于 qa/preview-*.png",
+  "selected": [
+    "A 静读",
+    "C 词屿"
+  ],
+  "reason": "A 逐词线性回忆和自动打卡，以字级与阅读纸构图；C 地图任选地点和主动终点打卡，以等距空间作为导航。相较 B 的整页词页，A/C 在进入方式、学习推进、图形媒介与打卡动作上差异更远。",
+  "files": [
+    {
+      "path": "selection-snapshot/blueprint.md",
+      "sha256": "8f40fd76f323f3cf141a1202f9ed8171093b869083d0fad20d4642b0695f84ae",
+      "original_path": "exploration/blueprint.md"
+    },
+    {
+      "path": "selection-snapshot/index.html",
+      "sha256": "8cc47fe276e0daa97706ca6ef7ab3bb66950f346d4a2d8c389068a941a3ad2fe",
+      "original_path": "exploration/index.html"
+    },
+    {
+      "path": "selection-snapshot/island.html",
+      "sha256": "d13364b3c3beda00eff0234378e937742aef3a474947a8c32f99f85a123e3c3e",
+      "original_path": "exploration/island.html"
+    },
+    {
+      "path": "selection-snapshot/page.html",
+      "sha256": "299ee518b21b23522f80d83274411cb4893d8d3fe23994fddc6625a3baa8ad21",
+      "original_path": "exploration/page.html"
+    },
+    {
+      "path": "selection-snapshot/quiet.html",
+      "sha256": "d72b7edb822828b20e3e82daf2920365323f5e28089d3808502342250a10ab69",
+      "original_path": "exploration/quiet.html"
+    },
+    {
+      "path": "selection-snapshot/words.js",
+      "sha256": "37452aacf09c19ec57f46a11863f3d808b1edefac6a0da16c805a23e449b21a7",
+      "original_path": "exploration/words.js"
+    }
+  ],
+  "candidate_closeout_changes": [
+    "exploration/blueprint.md",
+    "exploration/island.html",
+    "exploration/page.html"
+  ],
+  "candidate_closeout_note": "候选执行者在选择记录抵达前完成了窄屏措辞和完成节点路径的小修；选择时副本原样保留，展示链接指向该副本。成品允许沿用候选收尾后的实现。"
+}

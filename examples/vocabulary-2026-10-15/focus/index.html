@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#dceaf3"><title>静读 · 每天记住一点</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div id="save-alert" class="save-alert" hidden role="alert"></div>
+<main class="app">
+  <aside class="rail">
+    <button class="brand" id="home" aria-label="返回今日学习">静读<span>每天记住一点</span></button>
+    <div class="date" id="date"></div>
+    <div class="week-wrap"><div class="week" id="week"></div><p class="week-title" id="week-title"></p></div>
+    <nav class="rail-nav" aria-label="学习导航"><button id="library-open"><span aria-hidden="true">▤</span>词库</button><button id="records-open"><span aria-hidden="true">◷</span>学习足迹</button></nav>
+    <footer>每天，给记忆一点时间。<span id="local-state">进度自动保存在此浏览器</span></footer>
+  </aside>
+  <section class="room">
+    <header class="topline"><span id="position" role="status"></span><div class="meter" aria-hidden="true"><span id="fill"></span></div><button id="today-overview">今日词单</button></header>
+    <article class="reading" id="reading" aria-live="polite"></article>
+    <footer class="room-foot"><p id="notice" role="status">先回忆，再看答案。完成今天的词，打卡就会自然发生。</p><span class="keyboard-help">空格看词义 · 1 再练 · 2 记住</span></footer>
+  </section>
+</main>
+<dialog id="drawer" class="drawer" aria-labelledby="drawer-title"><header class="drawer-head"><h2 id="drawer-title"></h2><button id="drawer-close" aria-label="关闭面板">×</button></header><div id="drawer-body"></div></dialog>
+<input type="file" id="import-file" accept="application/json,.json" hidden>
+<script src="words.js"></script><script src="app.js"></script>
+</body></html>

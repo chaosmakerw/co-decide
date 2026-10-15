@@ -1,0 +1,169 @@
+{
+  "product": "拾词",
+  "runAt": "2026-10-15T08:24:42.296Z",
+  "environment": {
+    "browser": "Microsoft Edge (Chromium), Playwright, headless",
+    "origin": "file://",
+    "clock": "2026-10-15 to 2026-10-16, Asia/Shanghai",
+    "viewports": [
+      "1440×1050",
+      "390×844"
+    ],
+    "browserClosed": true
+  },
+  "summary": {
+    "total": 35,
+    "passed": 35,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "name": "file 直接打开，内置 72 词且今日初始为零",
+      "status": "passed"
+    },
+    {
+      "name": "学习先隐藏释义，翻卡后展示释义与例句",
+      "status": "passed"
+    },
+    {
+      "name": "再想想不计入目标，保留当天到期并本轮重试",
+      "status": "passed"
+    },
+    {
+      "name": "记住了计入一个词并安排次日复习",
+      "status": "passed"
+    },
+    {
+      "name": "有点模糊安排明天，完整保留学习次数",
+      "status": "passed"
+    },
+    {
+      "name": "目标调整即时生效，未达标禁止打卡",
+      "status": "passed"
+    },
+    {
+      "name": "达标后手动打卡，连续天数和日历同步",
+      "status": "passed"
+    },
+    {
+      "name": "已打卡当天的目标不会被后续设置改写",
+      "status": "passed"
+    },
+    {
+      "name": "重载后学习进度与打卡仍保留",
+      "status": "passed"
+    },
+    {
+      "name": "重复练习同一个词不会重复累计今日数量",
+      "status": "passed"
+    },
+    {
+      "name": "自定义单词添加并转义用户文本，重载保留",
+      "status": "passed"
+    },
+    {
+      "name": "重复单词忽略大小写并阻止新增",
+      "status": "passed"
+    },
+    {
+      "name": "批量添加先校验全部行，坏行不产生部分写入",
+      "status": "passed"
+    },
+    {
+      "name": "批量添加成功，内置和批内重复会跳过",
+      "status": "passed"
+    },
+    {
+      "name": "搜索、分类和学习状态筛选可组合",
+      "status": "passed"
+    },
+    {
+      "name": "关闭例句设置在学习卡中生效",
+      "status": "passed"
+    },
+    {
+      "name": "导出完整 JSON 备份，可读取应用和记录版本",
+      "status": "passed"
+    },
+    {
+      "name": "无效备份被拒绝，当前记录原样保留",
+      "status": "passed"
+    },
+    {
+      "name": "畸形进度和非法日期拒绝导入",
+      "status": "passed"
+    },
+    {
+      "name": "备份恢复合并缺失记录并采用更新时间较新的进度",
+      "status": "passed"
+    },
+    {
+      "name": "旧备份不会覆盖较新的进度，缺失条目不会删除现有内容",
+      "status": "passed"
+    },
+    {
+      "name": "历史连续打卡计算与月份导航正常",
+      "status": "passed"
+    },
+    {
+      "name": "跨日自动切换今日目标，复习按本地日期到期",
+      "status": "passed"
+    },
+    {
+      "name": "很熟悉的复习间隔逐步延长并标记掌握",
+      "status": "passed"
+    },
+    {
+      "name": "清空操作先确认，取消不影响数据",
+      "status": "passed"
+    },
+    {
+      "name": "清空后恢复完整备份，数据可实际往返",
+      "status": "passed"
+    },
+    {
+      "name": "异常存储原文保留，学习操作不会覆盖",
+      "status": "passed"
+    },
+    {
+      "name": "异常存储可经明确确认后启用新记录",
+      "status": "passed"
+    },
+    {
+      "name": "损坏记录可恢复有效备份",
+      "status": "passed"
+    },
+    {
+      "name": "重复错词最多重现两次，退出后进度已保存",
+      "status": "passed"
+    },
+    {
+      "name": "390px 手机布局无横向溢出，各页面导航可用",
+      "status": "passed"
+    },
+    {
+      "name": "键盘翻卡和数字评分可用",
+      "status": "passed"
+    },
+    {
+      "name": "桌面四页面无横向溢出",
+      "status": "passed"
+    },
+    {
+      "name": "存储不可用时明确提示，仍可暂存与导出",
+      "status": "passed"
+    },
+    {
+      "name": "无未捕获浏览器异常，也没有外部网络请求",
+      "status": "passed"
+    }
+  ],
+  "browserErrors": [],
+  "externalNetworkRequests": [],
+  "boundaries": [
+    "本轮为本机 Edge 自动化浏览器实测，不是实体手机测试。",
+    "测试使用隔离浏览器上下文，未访问或修改日常浏览器数据。",
+    "未验证不同浏览器的 file:// 存储策略和屏幕阅读器。",
+    "内置词义与例句为本地编辑内容，没有外部词典或真实发音服务。"
+  ]
+}

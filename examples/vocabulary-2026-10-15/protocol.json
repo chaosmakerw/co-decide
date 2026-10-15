@@ -1,0 +1,61 @@
+{
+  "note": "本提交的根目录 Skill 是本轮测试协议；在此提交 checkout 后可按哈希核对。未复制宿主配置。",
+  "files": [
+    {
+      "path": "skills/co-decide/references/frontend-design/guide.md",
+      "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+    },
+    {
+      "path": "skills/co-decide/references/frontend-design/LICENSE.txt",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "skills/co-decide/references/frontend-design/SOURCE.md",
+      "sha256": "03e6331fed1905e4b6543af151344bae3c83fa470ec2376b8da3f291fbc420ae"
+    },
+    {
+      "path": "skills/co-decide/references/interface-craft/advanced-motion.md",
+      "sha256": "a3a29a075b8e91c7ac655b171064970d4fabf15cb6b937a9b5fbc342685516d5"
+    },
+    {
+      "path": "skills/co-decide/references/interface-craft/design-production.md",
+      "sha256": "6bce1f072df16da61896938eb91917653fdd5d9bcf86d8aada3f9eb757d9cafe"
+    },
+    {
+      "path": "skills/co-decide/references/interface-craft/interaction-motion.md",
+      "sha256": "de25943b24ccb86aab72ecfaa200ac914ea90afedc0704b9661d917716f32092"
+    },
+    {
+      "path": "skills/co-decide/references/interface-craft/layout-theme.md",
+      "sha256": "cf66cb6714ddf6eecd60e8a2fa76b0380b4acb222872d4d5208f12fcce563b4d"
+    },
+    {
+      "path": "skills/co-decide/references/interface-craft/LICENSE-emil.txt",
+      "sha256": "4ff5bdb7887ec1435c9cab0e8d1a7caee704d894d65c2a008ccc68b1cc2f260b"
+    },
+    {
+      "path": "skills/co-decide/references/interface-craft/LICENSE-gsap.txt",
+      "sha256": "51b04b06556662dd817e8f4aa6d06bc7139dc73739e1319a7233cfde3e147b90"
+    },
+    {
+      "path": "skills/co-decide/references/interface-craft/LICENSE-impeccable.txt",
+      "sha256": "02bb8c3b4e70190e3986c0404ad2fd8d639b4f534252d82379cc1b502b6d1812"
+    },
+    {
+      "path": "skills/co-decide/references/interface-craft/NOTICE-impeccable.md",
+      "sha256": "c60a093c2845fd9fb82f9c6f742ece31f379f8190b535309d32d66c45ccffdcb"
+    },
+    {
+      "path": "skills/co-decide/references/interface-craft/polish.md",
+      "sha256": "f7f9581ecdff82458e3bd20ccedf6fcf82d005cb9a2c8356d63bf3f66597c72a"
+    },
+    {
+      "path": "skills/co-decide/references/interface-craft/SOURCE.md",
+      "sha256": "007beb0f51163afe96dbbcabf33efc625e1dcbc0c2d0a2a243e56bc8cfb5f554"
+    },
+    {
+      "path": "skills/co-decide/SKILL.md",
+      "sha256": "08a327abd56ab8e6f4c23f30ee38f5e866b01fdc5129bed6c221b31d02fb8986"
+    }
+  ]
+}

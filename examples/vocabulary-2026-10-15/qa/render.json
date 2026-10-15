@@ -1,0 +1,142 @@
+{
+  "scope": "本轮实测：首次打开、三视口排版、运行异常、外部请求；不代替视觉评价或业务验证",
+  "tests": 9,
+  "passed": 9,
+  "rows": [
+    {
+      "product": "island",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "layout": {
+        "width": 1440,
+        "scroll": 1440,
+        "text": 240
+      },
+      "errors": [],
+      "remote": [],
+      "passed": true
+    },
+    {
+      "product": "island",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "layout": {
+        "width": 768,
+        "scroll": 768,
+        "text": 240
+      },
+      "errors": [],
+      "remote": [],
+      "passed": true
+    },
+    {
+      "product": "island",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "layout": {
+        "width": 390,
+        "scroll": 390,
+        "text": 240
+      },
+      "errors": [],
+      "remote": [],
+      "passed": true
+    },
+    {
+      "product": "baseline",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "layout": {
+        "width": 1440,
+        "scroll": 1440,
+        "text": 553
+      },
+      "errors": [],
+      "remote": [],
+      "passed": true
+    },
+    {
+      "product": "baseline",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "layout": {
+        "width": 768,
+        "scroll": 768,
+        "text": 553
+      },
+      "errors": [],
+      "remote": [],
+      "passed": true
+    },
+    {
+      "product": "baseline",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "layout": {
+        "width": 390,
+        "scroll": 390,
+        "text": 471
+      },
+      "errors": [],
+      "remote": [],
+      "passed": true
+    },
+    {
+      "product": "focus",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "layout": {
+        "width": 1440,
+        "scroll": 1440,
+        "text": 217
+      },
+      "errors": [],
+      "remote": [],
+      "passed": true
+    },
+    {
+      "product": "focus",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "layout": {
+        "width": 768,
+        "scroll": 768,
+        "text": 217
+      },
+      "errors": [],
+      "remote": [],
+      "passed": true
+    },
+    {
+      "product": "focus",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "layout": {
+        "width": 390,
+        "scroll": 390,
+        "text": 135
+      },
+      "errors": [],
+      "remote": [],
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#345c49">
+  <title>拾词 · 每天拾起一点新知</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="storage-warning" class="storage-warning" hidden></div>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#today" aria-label="拾词首页"><span class="brand-mark">拾</span><span>拾词<small>MAKE WORDS YOURS</small></span></a>
+      <div class="sidebar-label">你的学习空间</div>
+      <nav aria-label="主要导航">
+        <button data-page="today" class="nav-item active"><span>◈</span> 今日学习 <i></i></button>
+        <button data-page="library" class="nav-item"><span>▤</span> 我的词库 <i id="library-count">72</i></button>
+        <button data-page="calendar" class="nav-item"><span>▦</span> 打卡足迹 <i></i></button>
+        <button data-page="settings" class="nav-item"><span>⚙</span> 目标与备份 <i></i></button>
+      </nav>
+      <div class="sidebar-note"><span class="tiny-leaf">❧</span><p>不用走得很快，<br>每天都向前一点。</p><small>一个单词，也是一份积累。</small></div>
+      <div class="local-tag"><span></span> 无需联网 · 数据保存在本机</div>
+    </aside>
+    <main id="main" tabindex="-1">
+      <header class="topbar"><div id="page-kicker">DAILY PRACTICE</div><div class="date-label" id="current-date"></div></header>
+      <section id="page-today" class="page">
+        <div class="page-heading"><div><h1 id="greeting">今天，也为自己拾一点新词。</h1><p>把碎片时间，变成看得见的积累。</p></div><span class="streak-pill">♨ <b id="streak-top">0</b> 天连续打卡</span></div>
+        <div class="today-grid">
+          <div class="learning-column">
+            <div class="overview-row"><div><span class="stat-label">等待复习</span><strong id="due-number">0<small>词</small></strong><button class="text-button" id="review-start">温故而知新 ↗</button></div><div><span class="stat-label">可以新学</span><strong id="new-number">0<small>词</small></strong><span class="stat-foot">按自己的节奏来</span></div><div><span class="stat-label">已掌握</span><strong id="mastered-number">0<small>词</small></strong><span class="stat-foot">每次回忆都算数</span></div></div>
+            <div id="learning-area"></div>
+            <div class="section-title"><h2>这一周，一点点靠近目标</h2><button class="text-button" data-go="calendar">查看足迹 ↗</button></div>
+            <div id="week-strip" class="week-strip"></div>
+          </div>
+          <aside class="right-column">
+            <section class="goal-panel"><div class="section-title"><h2>今日小目标</h2><span class="small-tag" id="goal-status">进行中</span></div><div class="goal-ring" id="goal-ring"><div><strong id="goal-done">0</strong><span id="goal-denominator">/ 10 词</span></div></div><p class="goal-caption" id="goal-caption">从第一个单词开始吧</p><button class="button checkin-button" id="checkin-button" disabled>完成目标后打卡</button><p class="fine-print">同一个词，每天只计入目标一次</p></section>
+            <section class="tip-panel"><span class="eyebrow">A LITTLE EVERY DAY</span><h3>回想，比重读<br>更有力量。</h3><p>先试着回忆中文，再翻开卡片。诚实选择掌握程度，拾词会安排下次复习。</p><div class="leaf-art" aria-hidden="true"><svg viewBox="0 0 200 105"><path d="M28 99Q99 97 169 19M80 84Q52 37 94 22Q117 54 80 84M113 64Q119 17 158 6Q173 48 113 64M57 93Q28 62 8 73Q14 103 57 93M136 41Q160 53 192 35Q182 8 136 41" fill="none" stroke="currentColor" stroke-width="2"/></svg></div></section>
+          </aside>
+        </div>
+      </section>
+      <section id="page-library" class="page" hidden>
+        <div class="page-heading"><div><h1>每个词，都有被记住的一天。</h1><p>内置生活词库，也可以装下你自己的单词。</p></div><button class="button" id="add-word">＋ 添加单词</button></div>
+        <div class="library-toolbar"><label class="search-box"><span>⌕</span><input id="word-search" type="search" placeholder="搜索英文、中文或例句" aria-label="搜索单词"></label><select id="category-filter" aria-label="分类筛选"><option value="all">全部分类</option></select><select id="status-filter" aria-label="学习状态筛选"><option value="all">全部状态</option><option value="new">尚未学习</option><option value="learning">正在巩固</option><option value="mastered">已经掌握</option></select></div>
+        <div class="section-title"><h2 id="result-count">全部单词</h2><button class="text-button" id="batch-import">批量添加 ↗</button></div>
+        <div id="word-list" class="word-list"></div>
+      </section>
+      <section id="page-calendar" class="page" hidden>
+        <div class="page-heading"><div><h1>认真走过的每一天，都在这里。</h1><p>打卡不需要补签。今天开始，也来得及。</p></div></div>
+        <div class="calendar-stats"><div><strong id="total-checkins">0</strong><span>累计打卡 / 天</span></div><div><strong id="longest-streak">0</strong><span>最长连续 / 天</span></div><div><strong id="total-studied">0</strong><span>累计学习 / 词次</span></div></div>
+        <section class="calendar-panel"><div class="section-title"><button class="icon-button" id="month-prev" aria-label="上个月">‹</button><h2 id="calendar-month"></h2><button class="icon-button" id="month-next" aria-label="下个月">›</button></div><div class="calendar-grid calendar-head"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div><div id="calendar-days" class="calendar-grid"></div><div class="calendar-legend"><span><i class="legend-dot checked"></i>已打卡</span><span><i class="legend-dot partial"></i>有学习记录</span><span>点击日期查看详情</span></div><div id="day-detail" class="day-detail" aria-live="polite"></div></section>
+      </section>
+      <section id="page-settings" class="page" hidden>
+        <div class="page-heading"><div><h1>让坚持，适合自己的节奏。</h1><p>目标可以轻一点，积累会慢慢变厚。</p></div></div>
+        <div class="settings-grid"><section class="settings-panel"><span class="eyebrow">YOUR OWN PACE</span><h2>每天学几个词？</h2><p>新学和复习都计入每日目标，重复学习只计一次。</p><form id="goal-form"><label for="daily-goal">每日目标（1–100 词）</label><div class="input-action"><input id="daily-goal" type="number" min="1" max="100" step="1" required><button class="button" type="submit">保存目标</button></div></form><p class="fine-print">今天尚未打卡时立即生效；已打卡的记录会保留。</p><hr><label class="switch-row"><span><b>显示英文例句</b><small>在翻开卡片后，结合语境记忆</small></span><input id="show-example" type="checkbox" role="switch"></label></section><section class="settings-panel"><span class="eyebrow">KEEP YOUR PROGRESS</span><h2>给积累留一份备份</h2><p>数据只存在当前浏览器。换设备或清理浏览器前，请导出备份。</p><div class="backup-actions"><button class="button" id="export-data">↓ 导出学习备份</button><button class="button secondary" id="import-data">↑ 恢复备份</button></div><input type="file" id="backup-file" accept=".json,application/json" hidden><p class="fine-print">恢复时合并打卡与单词，单词进度采用更新时间较新的记录。</p><hr><button class="text-button danger" id="reset-data">清空本机学习数据</button></section></div>
+        <section class="method-panel"><h2>拾词怎样安排复习？</h2><p>「再想想」会在本轮稍后重现；「有点模糊」明天再见；「记住了」从 1 天逐步延长；「很熟悉」从 3 天逐步延长。连续记住至少 3 次，且间隔达到 7 天，记为已掌握。无论是否掌握，到期后仍会出现在复习中。</p><p>日期以电脑的本地日期为准。每日学习完成后，点击「完成今日打卡」留下足迹。</p></section>
+      </section>
+      <footer>拾词 <span>·</span> 把单词记住，把坚持留下。</footer>
+    </main>
+  </div>
+  <dialog id="modal"><div class="modal-heading"><h2 id="modal-title"></h2><button id="modal-close" class="icon-button" aria-label="关闭弹窗">×</button></div><div id="modal-body"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

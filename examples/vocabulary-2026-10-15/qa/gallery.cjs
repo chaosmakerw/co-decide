@@ -1,0 +1,14 @@
+const {chromium}=require('playwright');
+const {pathToFileURL}=require('node:url');const path=require('node:path');const fs=require('node:fs');const assert=require('node:assert/strict');
+(async()=>{const browser=await chromium.launch({executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH,headless:true});const checks=[];
+try{const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto(pathToFileURL(path.join(__dirname,'..','index.html')).href);
+assert.equal(await page.locator('article .entry').count(),3);checks.push('三份成品入口齐全');
+const links=await page.locator('a').evaluateAll(a=>a.map(x=>x.getAttribute('href')));for(const href of links)assert.ok(fs.existsSync(path.join(__dirname,'..',href)),href);checks.push('入口、小样、选择记录、报告及图片链接真实存在');
+await page.waitForFunction(()=>[...document.querySelectorAll('img')].every(i=>i.complete&&i.naturalWidth>0));checks.push('三张桌面实际截图加载');
+await page.getByRole('button',{name:'手机',exact:true}).click();await page.waitForFunction(()=>[...document.querySelectorAll('img')].every(i=>i.src.endsWith('-mobile.png')&&i.complete&&i.naturalWidth>0));checks.push('三张手机实际截图切换');
+await page.getByRole('button',{name:'桌面',exact:true}).click();await page.waitForFunction(()=>[...document.querySelectorAll('img')].every(i=>i.src.endsWith('-desktop.png')&&i.complete&&i.naturalWidth>0));
+await page.screenshot({path:path.join(__dirname,'gallery.png'),fullPage:true});
+await page.setViewportSize({width:390,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));checks.push('比较页窄屏可用');assert.deepEqual(errors,[]);checks.push('比较页无脚本错误');
+fs.writeFileSync(path.join(__dirname,'gallery.json'),JSON.stringify({tests:checks.length,passed:checks.length,checks},null,2));console.log(JSON.stringify({tests:checks.length,passed:checks.length,checks}));
+}finally{await browser.close()}})().catch(e=>{console.error(e);process.exitCode=1});

@@ -18,6 +18,19 @@ PAYLOAD = (
     "assets/icon.svg",
     "skills/co-decide/SKILL.md",
     "skills/co-decide/agents/openai.yaml",
+    "skills/co-decide/references/frontend-design/guide.md",
+    "skills/co-decide/references/frontend-design/LICENSE.txt",
+    "skills/co-decide/references/frontend-design/SOURCE.md",
+    "skills/co-decide/references/interface-craft/layout-theme.md",
+    "skills/co-decide/references/interface-craft/design-production.md",
+    "skills/co-decide/references/interface-craft/polish.md",
+    "skills/co-decide/references/interface-craft/interaction-motion.md",
+    "skills/co-decide/references/interface-craft/advanced-motion.md",
+    "skills/co-decide/references/interface-craft/SOURCE.md",
+    "skills/co-decide/references/interface-craft/LICENSE-impeccable.txt",
+    "skills/co-decide/references/interface-craft/NOTICE-impeccable.md",
+    "skills/co-decide/references/interface-craft/LICENSE-emil.txt",
+    "skills/co-decide/references/interface-craft/LICENSE-gsap.txt",
     "README.md",
     "LICENSE",
 )
@@ -56,7 +69,7 @@ def build() -> dict:
     skill = skill_path.read_text(encoding="utf-8")
     require(skill.startswith("---\n") and "\n---\n" in skill, "Missing skill frontmatter")
     require(re.search(r"^name: co-decide$", skill.split("\n---\n", 1)[0], re.MULTILINE) is not None, "Skill identity mismatch")
-    require(len(list((ROOT / "skills").glob("*/SKILL.md"))) == 1, "Expected exactly one skill")
+    require(len(list((ROOT / "skills").rglob("SKILL.md"))) == 1, "Expected exactly one skill, including references")
     marketplace = json.loads((ROOT / ".agents/plugins/marketplace.json").read_text(encoding="utf-8"))
     require(marketplace["name"] == "co-decide", "Unexpected marketplace identity")
     entries = [entry for entry in marketplace["plugins"] if entry["name"] == portable["name"]]
@@ -67,11 +80,21 @@ def build() -> dict:
     require(entry["policy"] == {"installation": "AVAILABLE", "authentication": "ON_INSTALL"}, "Unexpected marketplace policy")
     require(entry["category"] == "Productivity", "Unexpected marketplace category")
     contents = {}
+    require(len(set(PAYLOAD)) == len(PAYLOAD), "Duplicate payload path")
     for relative in PAYLOAD:
         path = ROOT / relative
         require(path.resolve().is_relative_to(ROOT) and path.is_file(), f"Missing or escaping payload: {relative}")
         contents[relative] = path.read_bytes()
         require(bool(contents[relative]), f"Empty payload: {relative}")
+    for relative, data in contents.items():
+        if not relative.startswith("skills/co-decide/") or not relative.endswith(".md"):
+            continue
+        for target in re.findall(r"\[[^\]]+\]\(([^)]+)\)", data.decode("utf-8")):
+            if re.match(r"[a-zA-Z][a-zA-Z0-9+.-]*:", target) or target.startswith("#"):
+                continue
+            resolved = ((ROOT / relative).parent / target.split("#", 1)[0]).resolve()
+            require(resolved.is_relative_to(ROOT) and resolved.relative_to(ROOT).as_posix() in contents,
+                    f"Reference missing from package: {relative} -> {target}")
     output = ROOT / "dist" / f"{portable['name']}-{portable['version']}.zip"
     output.parent.mkdir(exist_ok=True)
     with ZipFile(output, "w", compression=ZIP_DEFLATED, compresslevel=9) as archive:

@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-15",
+  "prompt": "做一个内置打卡功能的背单词软件",
+  "requested_outputs": {
+    "co_decide": 2,
+    "without_co_decide": 1
+  },
+  "selection_authorization": "用户明确要求测试执行者选择尽可能方向不同的选项，然后做出成品",
+  "common_delivery": "中文、本地网页、直接打开、不部署、不修改现有配置",
+  "baseline_isolation": {
+    "context": "独立执行者，不继承当前对话历史",
+    "input": "原始命题及本地交付和隔离边界",
+    "excluded": "Co-Decide、任何可选 Skill、旧作品、其他执行者设计",
+    "separate_storage": true
+  },
+  "evaluation_boundary": "本轮为人工代选路线的演示性比较，不是真实用户选择，不是严格统计实验；没有完整模型 token 账单时不推断 token 节省。"
+}
